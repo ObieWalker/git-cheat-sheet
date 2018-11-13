@@ -1,5 +1,5 @@
 import logger from 'morgan';
-import router from './routes/cheat'
+import router from './routes/index'
 import dotenv from 'dotenv';
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -25,8 +25,9 @@ app.get('/hi', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });
 
-// app.use('/api/v1/', router);
+app.use('/api/v1/', router);
 app.listen(port, function(err) {
+  console.log("app is running on port", port)
   if (err) {
     console.log(err);
   } else {
