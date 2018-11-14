@@ -1,10 +1,12 @@
 import express from 'express'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken';
 import Cheat from '../database/models/command';
 import Category from '../database/models/category';
-import User from '../database/models/user.js';
+import User from '../database/models/user';
 
 const router = express.Router();
-
+let saltRound = 8;
 
   function getCheats (req, res){
     Cheat.find()
@@ -61,48 +63,85 @@ const router = express.Router();
     })
   }
 
-  async function createCheat(req, res) {
-    try {
-      let category = await Category.find({ name: req.body.category })
+  function createCheat(req, res){
+    const likeCategory = new RegExp(req.body.category, 'i')
+    Category.find({ name: likeCategory })
+    .then((category) => {
       if (category.length > 0){
-        let cheat = await Cheat.create({
+        Cheat.create({
           category: category[0]._id,
           command: req.body.command,
           description: req.body.description,
           keywords: [req.body.keywords]
         })
-        if (cheat) {
+        .then((cheat) => {
           res.status(201).json({
             success: true,
             message: `${cheat.command} command has been added to '${category[0].name}'.`,
             cheat
           })
-        }
+        })
       }
       else {
-        let category = await Category.create({ name: req.body.category})
-        let cheat = await Cheat.create({
-          category: category._id,
-          command: req.body.command,
-          description: req.body.description,
-          keywords: [req.body.keywords]
-        })
-        if (cheat) {
-          res.status(201).json({
-            success: true,
-            message: `${cheat.command} command has been added to '${category.name}'.`,
-            cheat
+        Category.create({ name: req.body.category})
+        .then((category) => {
+          Cheat.create({
+            category: category._id,
+            command: req.body.command,
+            description: req.body.description,
+            keywords: [req.body.keywords]
           })
-        }
-      }
+        .then ((cheat) => {
+          if (cheat) {
+            res.status(201).json({
+              success: true,
+              message: `${cheat.command} command has been added to '${category.name}'.`,
+              cheat
+            })
+          }
+        })
+      })
     }
-    catch(err) {
+    })
+    .catch(err => {
       res.json({
         success: false,
         message: `Cheat cannot be added at this time.`,
         err
       })
-    }
+    })
+  }
+
+  function createCategory(req, res){
+    const likeCategory = new RegExp(req.body.category, 'i')
+    Category.find({ name: likeCategory })
+    .then((category) => {
+      console.log("category==>>", category)
+      if (category.length > 0){
+        res.status(400).json({
+          success: false,
+          message: `It seems '${category[0].name}' already exists, try a different category name.`
+        })
+      }
+      else {
+        Category.create({ name: req.body.category})
+        .then((category) => {
+          if (category) {
+            res.status(201).json({
+              success: true,
+              message: `'${category.name}' category has been created.`,
+            })
+          }
+        })
+      }
+    })
+    .catch(err => {
+      res.json({
+        success: false,
+        message: `Category cannot be added at this time.`,
+        err
+      })
+    })
   }
 
   function deleteCheat(req, res) {
@@ -124,7 +163,7 @@ const router = express.Router();
     .catch(err => {
       res.status(404).json({
         success: false,
-        message: "No such cheat"
+        message: "Bad input ID"
       });
     })
   }
@@ -139,24 +178,24 @@ const router = express.Router();
     Cheat.deleteMany(deletedCategory)
     .then(() => {
       Category.findByIdAndDelete(id)
-      .then((deletedCategory) => {
-        if (deletedCategory){
+      .then((deleted) => {
+        if (deleted){
           res.json({
             success: true,
-            message: `The '${deletedCategory.name}' category has been deleted.`
+            message: `The '${deleted.name}' category has been deleted.`
           })
         } else {
           res.status(404).json({
             success: false,
-            message: "No such cheat"
+            message: "No such category"
           });
         }
       })
     })
     .catch(err => {
-      res.status(404).json({
+      res.status(400).json({
         success: false,
-        message: "No such cheat"
+        message: "Bad input ID"
       });
     })
   }
@@ -184,9 +223,9 @@ const router = express.Router();
       }
     })
     .catch(err => {
-      res.status(404).json({
+      res.status(400).json({
         success: false,
-        message: "No such cheat",
+        message: "Wrong input ID",
         err
       });
     })
@@ -213,43 +252,105 @@ const router = express.Router();
       }
     })
     .catch(err => {
-      res.status(404).json({
+      res.status(400).json({
         success: false,
-        message: "No such category",
+        message: "Bad input ID",
         err
       });
     })
   }
 
-  // router.post('/users',(req, res) => {
-  //   User.create({
-  //     name: req.body.groceryName,
-  //     price: req.body.groceryPrice
-  //   })
-  //   .then(grocery => {
-  //     if (grocery) {
-  //       res.status(201).json({
-  //         success: true,
-  //         message: `${grocery.name} has been added at &#8358;${grocery.price}`,
-  //         grocery
-  //       })
-  //     }
-  //   })
-  //   .catch(err => {
-  //     res.json({
-  //       success: false,
-  //       message: `Grocery cannot be added because ${err}`,
-  //       err
-  //     })
-  //   })
-  // })
+  function signup(req, res) {
+    return User.find({
+        email: req.body.email
+    }).then((user) => {
+      // checks to see if user already exist
+      if (user.length > 0) {
+        return res.status(409).json({
+          message: 'User already exists'
+        });
+      } // ensures both entries to password match
+      if (req.body.password !== req.body.verifyPassword) {
+        // passwords must match
+        return res.status(400).json({ message: 'passwords did not match' });
+      } // password encrypt at 2 raised to power 13
+      const myPassword = bcrypt.hashSync(req.body.password, saltRound);
+      // creates account
+      return User.create({
+        username: req.body.username,
+        password: myPassword,
+        email: req.body.email
+      })
+        .then((user) => {
+          const message = 'Your account has been created!, Your details';
+          return res.status(201).json({
+            message,
+            user: {
+              username: user.username,
+              email: user.email
+            }
+          });
+        })
+        .catch(error =>
+          res.status(500).json({ message: 'Server Error', error }));
+    });
+  }
+  function signin(req, res) {
+    User.findOne({
+      email: req.body.email
+    })
+    .then((user) => {
+      if (!user) {
+        return res.status(404).send({
+          success: false,
+          message: 'Wrong email or password'
+        });
+      }
+      bcrypt.compare(req.body.password, user.password, (err, hash) => {
+        if (!hash) {
+          return res
+            .status(403)
+            .json({ success: false, message: 'Wrong email or password' });
+        } else if (hash) {
+          const payload = {
+            email: user.email,
+            username: user.username,
+            id: user._id
+          };
+          const token = jwt.sign(payload, process.env.SECRET, {
+            expiresIn: '24h'
+          });
+          return res.status(200).json({
+            success: true,
+            message: 'Login Successful!',
+            token,
+            user: {
+              username: user.username,
+              email: user.email,
+              id: user._id
+            }
+          });
+        }
+      });
+    })
+    .catch((error) => {
+      res.status(400).send({
+        success: false,
+        error
+      });
+    });
+  }
+
 
   router.get('/cheats',getCheats)
   router.get('/category', getCategories)
   router.post('/cheats', createCheat)
+  router.post('/category', createCategory)
   router.delete('/cheats/:id', deleteCheat) 
   router.delete('/category/:id', deleteCategory)
   router.patch('/cheats/:id', updateCheat)
   router.patch('/category/:id', updateCategory)
+  router.post('/signup', signup)
+  router.post('/signin', signin)
 
 export default router;
