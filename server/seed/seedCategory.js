@@ -16,16 +16,19 @@ exports.seedCategory = function seedCategory() {
             description: data.description,
             command: data.command,
             keywords: data.keywords
-          }).then(command => {
-            total++
-            if (total === 48){
-              console.log("Seed Completed!!!")
-              end()
-            }
+          })
+            .then(command => {
+              Category.findOneAndUpdate({ _id : category._id }, { $push : { command : command._id }})
+              .then((cat) => {
+                total++
+                if (total === 48){
+                  console.log("Seed Completed!!!")
+                  end()
+                }
+              })
+            })
           })
         })
       })
     })
-  },
-)}
-
+  }

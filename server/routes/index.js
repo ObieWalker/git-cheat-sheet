@@ -38,6 +38,7 @@ let saltRound = 8;
 
   function getCategories(req, res) {
     Category.find()
+    .populate("command", "command description")
     .exec()
     .then ((categories) => {
       if (categories) {
@@ -75,6 +76,7 @@ let saltRound = 8;
           keywords: [req.body.keywords]
         })
         .then((cheat) => {
+          Category.findOneAndUpdate({ _id : category[0]._id }, { $push : { command : cheat._id }})
           res.status(201).json({
             success: true,
             message: `${cheat.command} command has been added to '${category[0].name}'.`,
@@ -116,7 +118,6 @@ let saltRound = 8;
     const likeCategory = new RegExp(req.body.category, 'i')
     Category.find({ name: likeCategory })
     .then((category) => {
-      console.log("category==>>", category)
       if (category.length > 0){
         res.status(400).json({
           success: false,

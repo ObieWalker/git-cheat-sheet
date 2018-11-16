@@ -1,45 +1,46 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const User  = require('../database/models/user');
+const bcrypt = require('bcrypt');
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGODB_URI)
-
-mongoose.connection.on('connected', function() {
-
-mongoose.connection.db.dropDatabase();
-
+let done = 0
+exports.seedUsers = function seedUsers() {
   const users = [
-    new User({
-      username: "Admin",
-      email: "admin@gmail.com",
-      password: "brew install git"
-    }),
-    new User({
-      username: "Admin2",
-      email: "admin2@gmail.com",
-      password: "brew install git"
-    })
+    {
+      username: process.env.ADMIN1_USERNAME,
+      email: process.env.ADMIN1_EMAIL,
+      password: bcrypt.hashSync(process.env.ADMIN_PASSWORD, 8),
+    },
+    {
+      username: process.env.ADMIN2_USERNAME,
+      email: process.env.ADMIN2_EMAIL,
+      password: bcrypt.hashSync(process.env.ADMIN_PASSWORD, 8),
+    }
   ]
 
-  let done = 0
+  User.find({}).exec(function (err, collection) {
 
-  users.forEach((item) =>{
-    item.save()
-    .then(savedItem => {
-      done++
-      if (done === users.length){
-        end();
-      }
+    users.forEach((user) =>{
+      User.create({ 
+        username: user.username,
+        email: user.email,
+        password: user.password
+      })
+      .then(savedUser => {
+        done++
+        if (done === users.length){
+          end();
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
     })
-    .catch(err => {
-      console.log(err)
-    })
+
+    const end = () => {
+      console.log("Users document has been seeded")
+    }
   })
-
-  const end = () => {
-    mongoose.disconnect();
-  }
-
-});
+}
