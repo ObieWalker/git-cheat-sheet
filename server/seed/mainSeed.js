@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const { seedCategory } = require('./seedCategory');
+const { seedUsers } = require('./seedUsers')
 
 dotenv.config();
 
@@ -14,5 +15,6 @@ export const end = () => {
 mongoose.connection.on('connected', function() {
 
 mongoose.connection.db.dropDatabase();
+seedUsers()
 seedCategory()
 })
