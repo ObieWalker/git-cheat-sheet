@@ -65,45 +65,26 @@ let saltRound = 8;
   }
 
   function createCheat(req, res){
-    const likeCategory = new RegExp(req.body.category, 'i')
-    Category.find({ name: likeCategory })
-    .then((category) => {
-      if (category.length > 0){
-        Cheat.create({
-          category: category[0]._id,
-          command: req.body.command,
-          description: req.body.description,
-          keywords: [req.body.keywords]
-        })
-        .then((cheat) => {
-          Category.findOneAndUpdate({ _id : category[0]._id }, { $push : { command : cheat._id }})
-          res.status(201).json({
-            success: true,
-            message: `${cheat.command} command has been added to '${category[0].name}'.`,
-            cheat
-          })
-        })
-      }
-      else {
-        Category.create({ name: req.body.category})
-        .then((category) => {
-          Cheat.create({
-            category: category._id,
-            command: req.body.command,
-            description: req.body.description,
-            keywords: [req.body.keywords]
-          })
-        .then ((cheat) => {
-          if (cheat) {
-            res.status(201).json({
-              success: true,
-              message: `${cheat.command} command has been added to '${category.name}'.`,
-              cheat
-            })
+    Cheat.create({
+      category: req.body.id,
+      command: req.body.cheat.command,
+      description: req.body.cheat.description,
+      keywords: [req.body.cheat.keywords]
+    })
+    .then((cheat) => {
+      Category.findOneAndUpdate({ _id : req.body.id }, { $push : { command : cheat._id }})
+      .then(() => {
+        res.status(201).json({
+          success: true,
+          message: `The '${cheat.command}' command has been added.`,
+          cheatDetails: {
+            _id: cheat._id,
+            categoryId: req.body.id,
+            command: cheat.command,
+            description: cheat.description
           }
         })
       })
-    }
     })
     .catch(err => {
       res.json({
@@ -119,22 +100,21 @@ let saltRound = 8;
     Category.find({ name: likeCategory })
     .then((category) => {
       if (category.length > 0){
-        res.status(400).json({
+        return res.status(401).json({
           success: false,
-          message: `It seems '${category[0].name}' already exists, try a different category name.`
+          message: `It seems category '${category[0].name}' already exists, try a different category name.`
         })
       }
-      else {
-        Category.create({ name: req.body.category})
-        .then((category) => {
-          if (category) {
-            res.status(201).json({
-              success: true,
-              message: `'${category.name}' category has been created.`,
-            })
-          }
-        })
-      }
+      Category.create({ name: req.body.category})
+      .then((category) => {
+        if (category) {
+          res.status(201).json({
+            success: true,
+            message: `'${category.name}' category has been created.`,
+            category
+          })
+        }
+      })
     })
     .catch(err => {
       res.json({
@@ -181,7 +161,7 @@ let saltRound = 8;
       Category.findByIdAndDelete(id)
       .then((deleted) => {
         if (deleted){
-          res.json({
+          return res.json({
             success: true,
             message: `The '${deleted.name}' category has been deleted.`
           })

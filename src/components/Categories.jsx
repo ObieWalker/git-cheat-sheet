@@ -15,20 +15,22 @@ export class Categories extends Component {
   }
 
   render() {
-    const { cheats, search } = this.props
+    const { cheats, search, deleteCategory, onShow, cheatModalShow } = this.props
     let filteredCategories = cheats.filter((cheat) => {
       return cheat.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
     })
-
   return (
       <div className="cards-container">
         {
           cheats && cheats.length > 0 ? (
             filteredCategories.map((eachCategory) => (
               <CategoryCard 
-              search={search}
-              cheats={eachCategory}
-              key={eachCategory._id}
+                onShow={onShow}
+                deleteCategory={deleteCategory}
+                search={search}
+                cheats={eachCategory}
+                key={eachCategory._id}
+                cheatModalShow={cheatModalShow}
               /> 
             ))
           )
