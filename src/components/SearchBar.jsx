@@ -10,14 +10,15 @@ const SearchBar = ({updateSearch}) => {
             <form className="card card-sm">
                 <div className="card-body row no-gutters align-items-center">
                     <div className="col-auto">
-                        <i className="fas fa-search h4 text-body"></i>
                     </div>
                     <div className="col">
-                        <input className="form-control form-control-lg form-control-borderless" 
+                        <input className="form-control form-control-lg form-control-borderless fa"
+                        
                         type="search"
                         name='search'
                         onChange={updateSearch.bind(this)}
-                        placeholder="THE AWESOME GIT CHEAT SHEET"/>
+                        placeholder="&#61442; THE AWESOME GIT CHEAT SHEET"
+                        />
                     </div>
                 </div>
             </form>
