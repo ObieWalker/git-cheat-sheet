@@ -22,9 +22,9 @@ export default function groceriesReducer(state = initialState.cheats, action) {
       newState =  [...state];
       categoryIndex = newState.findIndex(category => category._id === action.category._id);
       newState = [
-        ...newState.splice(0, categoryIndex),
+        ...newState.slice(0, categoryIndex),
         action.category,
-        ...newState.splice(
+        ...newState.slice(
           categoryIndex + 1,
           newState.length
         )

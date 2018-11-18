@@ -1,5 +1,9 @@
 const initialState = {
-  cheats: []
+  cheats: [],
+  user: {
+    isAuthenticated: false,
+    user: {}
+  }
 }
 
 export default  initialState;

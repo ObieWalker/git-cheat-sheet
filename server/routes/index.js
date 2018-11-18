@@ -218,6 +218,7 @@ let saltRound = 8;
       name: req.body.category
     }
     Category.findOneAndUpdate(categoryId, { $set: newCategory }, {new:true})
+    .populate("command", "command description")
     .then(category => {
       if(category){
         res.json({
@@ -276,7 +277,9 @@ let saltRound = 8;
           res.status(500).json({ message: 'Server Error', error }));
     });
   }
+
   function signin(req, res) {
+    console.log(req.body)
     User.findOne({
       email: req.body.email
     })

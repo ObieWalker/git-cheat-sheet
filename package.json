@@ -37,6 +37,7 @@
     "path": "^0.12.7",
     "proptypes": "^1.1.0",
     "react": "^16.6.1",
+    "react-app-env": "^1.2.3",
     "react-dom": "^16.6.1",
     "react-loading-animation": "^1.4.0",
     "react-scripts": "2.1.1",
