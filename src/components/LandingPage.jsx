@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Loading from 'react-loading-animation';
 import SearchBar from './SearchBar';
 import Categories from './Categories';
 import CategoryModal from './CategoryModal';
 import CheatModal from './CheatModal';
 import validateCategory, {editCategoryValidator, addCheatValidator} from '../helpers/inputValidator';
-import { addCategory, deleteCategory, editCategory, addCheat } from '../actions/cheatsAction';
+import { getAllCheats,addCategory, deleteCategory, editCategory, addCheat } from '../actions/cheatsAction';
+import { logOut }  from '../actions/userAction'
 
 export class LandingPage extends Component {
   constructor(props) {
@@ -39,8 +41,28 @@ export class LandingPage extends Component {
     this.cheatModalShow = this.cheatModalShow.bind(this)
     this.cheatModalOnHide = this.cheatModalOnHide.bind(this)
     this.addCheat = this.addCheat.bind(this)
+    this.handleLogOut = this.handleLogOut.bind(this)
   }
 
+
+  componentWillMount() {
+    this.setState({
+      pageLoading: true
+    })
+    this.props.getAllCheats().then(() => {
+      this.setState({ 
+        pageLoading: false
+       })
+    })
+  }
+
+  handleLogOut(e) {
+    e.preventDefault();
+    this.props.logOut();
+    this.props.history.push('/');
+    window.location.reload();
+  }
+ 
   addCategory(e) {
     e.preventDefault();
     if (this.addCategoryformIsValid()) {
@@ -170,26 +192,39 @@ export class LandingPage extends Component {
 
   render() {
     return (
-      <div>
-        <SearchBar 
-          updateSearch={this.updateSearch}
-          />
+      <div>          
         <button 
-          type="submit"
-          id="add-grocery"
-          className="waves-effect waves-dark
-          pull-right hoverable dark-green btn btn-primary"
-          onClick={() => this.setState({ show: true })} >
-          Create new Category</button>
-        <br />
-        <div className="container">
-            <Categories 
-              search={this.state.search}
-              deleteCategory={this.deleteCategory}
-              onShow={this.modalShow}
-              cheatModalShow={this.cheatModalShow}
+        type="submit"
+        id="add-grocery"
+        className="waves-effect waves-dark pull-right
+        hoverable dark-green btn btn-danger"
+        onClick={this.handleLogOut}
+        > Logout</button>
+        <div>
+          <SearchBar 
+            updateSearch={this.updateSearch}
             />
+          <button 
+            type="submit"
+            id="add-grocery"
+            className="waves-effect waves-dark
+            hoverable dark-green btn btn-primary"
+            onClick={() => this.setState({ show: true })} >
+            Create new Category</button>
         </div>
+
+        <br />
+        { this.state.pageLoading ? 
+          <Loading /> : 
+          <div className="container">
+              <Categories 
+                search={this.state.search}
+                deleteCategory={this.deleteCategory}
+                onShow={this.modalShow}
+                cheatModalShow={this.cheatModalShow}
+              />
+          </div>
+        }
         <CategoryModal 
           addCategory={this.addCategory}
           editCategory={this.editCategory}
@@ -216,16 +251,18 @@ export class LandingPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  
+  user: state.user
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
+      getAllCheats,
       addCategory,
       deleteCategory,
       editCategory,
-      addCheat
+      addCheat, 
+      logOut
     },
     dispatch
   );
