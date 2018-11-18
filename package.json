@@ -12,6 +12,7 @@
     "@material-ui/core": "^3.5.1",
     "axios": "^0.18.0",
     "babel-jest": "^23.4.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
@@ -26,6 +27,7 @@
     "html-webpack-plugin": "^3.2.0",
     "i": "^0.3.6",
     "jest": "^23.6.0",
+    "jest-transform-css": "^2.0.0",
     "jsonwebtoken": "^8.3.0",
     "mdbreact": "^4.8.3",
     "mocha": "^5.2.0",
@@ -46,13 +48,18 @@
     "sweetalert": "^2.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "client": "npm run start:client",
+    "start:client": "react-scripts start",
+    "start": "babel-node server/app.js",
+    "prebuild": "rm -rf build",
+    "heroku-postbuild": "npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\"",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "server": "nodemon --exec babel-node server/app.js",
     "seed": "babel-node server/seed/mainSeed.js",
+    "test:client": "BABEL_ENV=test jest --config ./jest.config.json",
     "test:seed": "babel-node server/tests/testSeed/testSeed.js",
     "test:server": "npm run test:seed && export NODE_ENV=test && mocha --compilers js:@babel/register ./server/tests/index.js"
   },
@@ -88,6 +95,20 @@
     "style-loader": "^0.23.1",
     "toastr": "^2.1.4",
     "validator": "^10.8.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/tests/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/tests/__mocks__/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      "^.+\\.js$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss)$": "jest-transform-css"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/react-runtime"
+    ]
   },
   "proxy": "http://localhost:5000/"
 }

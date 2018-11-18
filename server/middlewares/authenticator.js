@@ -11,20 +11,12 @@ export default class auth {
       jwt.verify(token, process.env.SECRET, (err, decoded) => {
         if (err) {
           return res.status(401).json({
-            message: 'Failed to authenticate user'
+            message: 'Failed to authenticate, please login.'
           });
         }
-        User.findOne({ _id: decoded.id })
-        .then((user) => {
-          if (!user) {
-            return res.status(401).json({
-              message: 'User account does not exist'
-            });
-          }
           // the user data is stored
           req.decoded = decoded;
           next();
-        });
       });
     } else {
       res.status(403).json({

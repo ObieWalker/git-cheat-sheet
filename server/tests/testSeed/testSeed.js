@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Command  = require('../../database/models/command');
 const Category  = require('../../database/models/category');
 const { seedData } = require('../../seed/seedData')
+const { seedUsers } = require('../../seed/seedUsers')
 
 let total = 0;
 function seedCategory() {
@@ -42,5 +43,6 @@ const end = () => {
 mongoose.connection.on('connected', function() {
 
 mongoose.connection.db.dropDatabase();
+seedUsers()
 seedCategory()
 })
