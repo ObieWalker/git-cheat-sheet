@@ -80,8 +80,6 @@ export class Register extends Component {
         isLoading: true
       });
       const userDetails = {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
         username: this.state.username,
         email: this.state.email,
         password: this.state.password,
@@ -140,8 +138,8 @@ export class Register extends Component {
           <form className="col s12 m6 push-m3 l4 push-l4">
 
             <div className="row">
+              <label htmlFor="username">Username:</label>
               <div className="input-field col s12 m6 l6">
-                <i className="material-icons prefix">account_circle</i>
                 <input
                   id="username"
                   onChange={this.handleChange}
@@ -150,16 +148,15 @@ export class Register extends Component {
                   type="text"
                   className="validate username"
                 />
-                <label htmlFor="username">Username</label>
                 {this.state.errors.username && (
                   <span id="usernameError" className="red-text">
                     {this.state.errors.username}
                   </span>
                 )}
               </div>
-
+              <br />
+                <label htmlFor="email">Email:</label>
               <div className="input-field col s12 m6 l6">
-                <i className="material-icons prefix">email</i>
                 <input
                   id="email"
                   onChange={this.handleChange}
@@ -168,7 +165,6 @@ export class Register extends Component {
                   type="email"
                   className="validate email"
                 />
-                <label htmlFor="email">Email</label>
                 {this.state.errors.email && (
                   <span id="emailError" className="red-text">
                     {this.state.errors.email}
@@ -176,10 +172,11 @@ export class Register extends Component {
                 )}
               </div>
             </div>
+            <br />
 
             <div className="row">
+                <label htmlFor="password">Password:</label>
               <div className="input-field col s12 m6 l6">
-                <i className="material-icons prefix">vpn_key</i>
                 <input
                   id="password"
                   onChange={this.handleChange}
@@ -188,16 +185,16 @@ export class Register extends Component {
                   type="password"
                   className="password"
                 />
-                <label htmlFor="password">Password</label>
                 {this.state.errors.password && (
                   <span id="passwordError" className="red-text">
                     {this.state.errors.password}
                   </span>
                 )}
               </div>
+              <br />
 
+              <label htmlFor="password2">Confirm Password:</label>
               <div className="input-field col s12 m6 l6">
-                <i className="material-icons prefix">replay</i>
                 <input
                   id="password2"
                   onChange={this.handleChange}
@@ -206,7 +203,6 @@ export class Register extends Component {
                   type="password"
                   className="validate verifyPassword"
                 />
-                <label htmlFor="password2">Retype Password</label>
                 {this.state.errors.verifyPassword && (
                   <span className="red-text">
                     {this.state.errors.verifyPassword}
@@ -214,21 +210,15 @@ export class Register extends Component {
                 )}
               </div>
             </div>
-            <div>
-              <div>
-                <p>
-                  {'Already have an account? '}
-                  <Link to="/">Click here to Sign In </Link>
-                </p>
-              </div>
-            </div>
+            <br />
+            <p>{'Already have an account? '}<Link to="/">Click here to Sign In </Link></p>
+
             <button
               className="waves-effect waves-light btn right hoverable indigo"
               onClick={this.onSubmit}
               // disabled={isEnabled}
               type="submit"
-            >
-              <i className="large material-icons right">done</i>register
+            >register
             </button>
             <br />
           </form>
