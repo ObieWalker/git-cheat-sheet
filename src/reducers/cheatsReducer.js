@@ -6,7 +6,7 @@ let newState, categoryIndex
 export default function groceriesReducer(state = initialState.cheats, action) {
   switch (action.type) {
     case types.GET_CHEATS_SUCCESS:
-      return action.cheats;
+      return action.categories;
 
     case types.ADD_CATEGORY_SUCCESS:
       return [

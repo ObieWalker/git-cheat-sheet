@@ -243,42 +243,6 @@ let saltRound = 8;
     })
   }
 
-  function signup(req, res) {
-    return User.find({
-        email: req.body.email
-    }).then((user) => {
-      // checks to see if user already exist
-      if (user.length > 0) {
-        return res.status(409).json({
-          message: 'User already exists'
-        });
-      } // ensures both entries to password match
-      if (req.body.password !== req.body.verifyPassword) {
-        // passwords must match
-        return res.status(400).json({ message: 'passwords did not match' });
-      } // password encrypt at 2 raised to power 13
-      const myPassword = bcrypt.hashSync(req.body.password, saltRound);
-      // creates account
-      return User.create({
-        username: req.body.username,
-        password: myPassword,
-        email: req.body.email
-      })
-        .then((user) => {
-          const message = 'Your account has been created!, Your details';
-          return res.status(201).json({
-            message,
-            user: {
-              username: user.username,
-              email: user.email
-            }
-          });
-        })
-        .catch(error =>
-          res.status(500).json({ message: 'Server Error', error }));
-    });
-  }
-
   function signin(req, res) {
     User.findOne({
       email: req.body.email
@@ -334,7 +298,6 @@ let saltRound = 8;
   router.delete('/category/:id', auth.authenticate, deleteCategory)
   router.patch('/cheats/:id', auth.authenticate, updateCheat)
   router.patch('/category/:id', auth.authenticate, updateCategory)
-  router.post('/signup', signup)
   router.post('/signin', signin)
 
 export default router;
