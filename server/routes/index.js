@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import Cheat from '../database/models/command';
 import Category from '../database/models/category';
 import User from '../database/models/user';
+import auth from '../middlewares/authenticator'
 
 const router = express.Router();
 let saltRound = 8;
@@ -100,7 +101,7 @@ let saltRound = 8;
     Category.find({ name: likeCategory })
     .then((category) => {
       if (category.length > 0){
-        return res.status(401).json({
+        return res.status(400).json({
           success: false,
           message: `It seems category '${category[0].name}' already exists, try a different category name.`
         })
@@ -279,7 +280,6 @@ let saltRound = 8;
   }
 
   function signin(req, res) {
-    console.log(req.body)
     User.findOne({
       email: req.body.email
     })
@@ -328,12 +328,12 @@ let saltRound = 8;
 
   router.get('/cheats',getCheats)
   router.get('/category', getCategories)
-  router.post('/cheats', createCheat)
-  router.post('/category', createCategory)
-  router.delete('/cheats/:id', deleteCheat) 
-  router.delete('/category/:id', deleteCategory)
-  router.patch('/cheats/:id', updateCheat)
-  router.patch('/category/:id', updateCategory)
+  router.post('/cheats', auth.authenticate, createCheat)
+  router.post('/category', auth.authenticate, createCategory)
+  router.delete('/cheats/:id', auth.authenticate, deleteCheat) 
+  router.delete('/category/:id', auth.authenticate, deleteCategory)
+  router.patch('/cheats/:id', auth.authenticate, updateCheat)
+  router.patch('/category/:id', auth.authenticate, updateCategory)
   router.post('/signup', signup)
   router.post('/signin', signin)
 

@@ -52,9 +52,15 @@ export const getAllCheats = () => (dispatch) => {
 }
 
 export const addCategory = (category) => (dispatch) => {
+  if (axios.defaults.headers.common.token === '') {
+    axios.defaults.headers.common.token = localStorage.getItem('token');
+  }
   return axios({
     method: 'POST',
     url: '/api/v1/category',
+    headers: {
+      token: localStorage.getItem('token')
+    },
     data: {category}
   })
   .then(response => {
@@ -67,9 +73,15 @@ export const addCategory = (category) => (dispatch) => {
 }
 
 export const deleteCategory = (categoryId) => (dispatch) => {
+  if (axios.defaults.headers.common.token === '') {
+    axios.defaults.headers.common.token = localStorage.getItem('token');
+  }
   return axios({
     method: 'DELETE',
-    url: `/api/v1/category/${categoryId}`
+    url: `/api/v1/category/${categoryId}`,
+    headers: {
+      token: localStorage.getItem('token')
+    },
   })
   .then(response => {
     toastr.success(response.data.message)
@@ -81,9 +93,15 @@ export const deleteCategory = (categoryId) => (dispatch) => {
 }
 
 export const editCategory = (id, category) => (dispatch) => {
+  if (axios.defaults.headers.common.token === '') {
+    axios.defaults.headers.common.token = localStorage.getItem('token');
+  }
   return axios({
     method: 'PATCH',
     url: `/api/v1/category/${id}`,
+    headers: {
+      token: localStorage.getItem('token')
+    },
     data: {category}
   })
   .then(response => {
@@ -96,9 +114,15 @@ export const editCategory = (id, category) => (dispatch) => {
 }
 
 export const addCheat = (id, cheat) => (dispatch) => {
+  if (axios.defaults.headers.common.token === '') {
+    axios.defaults.headers.common.token = localStorage.getItem('token');
+  }
   return axios({
     method: 'POST',
     url: '/api/v1/cheats',
+    headers: {
+      token: localStorage.getItem('token')
+    },
     data: {cheat, id}
   })
   .then(response => {

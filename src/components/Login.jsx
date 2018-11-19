@@ -63,7 +63,7 @@ export class Login extends Component {
  
   render() {
     return (
-      <div>
+      <div className="container">
         <h3 style={{ fontFamily: 'serif', marginTop: '5%' }}>
           Sign in to your account.{' '}
         </h3>
@@ -71,10 +71,11 @@ export class Login extends Component {
         <div style={{}}>
           <form className="col s12 m6 push-m3 l4 push-l4">
             <div className="row">
+            <label htmlFor="email">Email</label>
               <div className="input-field col s12 m6 push-m3 l4 push-l4">
+                
                 <input
                   className="validate"
-                  // value={this.state.email.value}
                   error={this.state.errors.email}
                   onFocus={this.state.handleOnFocus}
                   type="email"
@@ -82,7 +83,6 @@ export class Login extends Component {
                   id="email"
                   onChange={this.handleChange}
                 />
-                <label htmlFor="email">Enter your email</label>
               </div>
               {this.state.errors.email && (
                 <span id="emailError" className="red-text">
@@ -90,8 +90,9 @@ export class Login extends Component {
                 </span>
               )}
             </div>
-
+              <br />
             <div className="row">
+              <label htmlFor="password">Password</label>
               <div className="input-field col s12 m6 push-m3 l4 push-l4">
                 <input
                   className="validate"
@@ -102,7 +103,6 @@ export class Login extends Component {
                   id="password"
                   onChange={this.handleChange}
                 />
-                <label htmlFor="password">Enter your password</label>
               </div>
               {this.state.errors.password && (
                 <span id="passwordError" className="red-text">
@@ -110,11 +110,10 @@ export class Login extends Component {
                 </span>
               )}
             </div>
+            <br />
             <div className="row">
               <div className="col s12 m6 push-m3 l4 push-l4">
-                <p>
-                  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                <p> 
                   {'Do not have an account? You can register '}
                   <Link to="/register">here</Link>
                 </p>
