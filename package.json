@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/cli": "^7.0.0",
+    "@babel/node": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
@@ -95,20 +96,6 @@
     "style-loader": "^0.23.1",
     "toastr": "^2.1.4",
     "validator": "^10.9.0"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/src/tests/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/tests/__mocks__/styleMock.js"
-    },
-    "transform": {
-      "^.+\\.js?$": "babel-jest",
-      "^.+\\.js$": "babel-jest",
-      ".+\\.(css|styl|less|sass|scss)$": "jest-transform-css"
-    },
-    "transformIgnorePatterns": [
-      "!node_modules/react-runtime"
-    ]
   },
   "jest": {
     "moduleNameMapper": {
