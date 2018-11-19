@@ -4,7 +4,6 @@ import history from '../history'
 import '../styles/App.css';
 import LandingPage from './LandingPage';
 import Login from './Login';
-import Register from './Register';
 import RequireAuthentication from '../helpers/RequireAuthentication'
 
 class App extends Component {
@@ -15,7 +14,6 @@ class App extends Component {
           <div className="container">
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
             <Route path="/cheats" component={RequireAuthentication(LandingPage)} />
           </div>
         </Switch>
