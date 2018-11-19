@@ -94,7 +94,21 @@
     "redux-thunk": "^2.3.0",
     "style-loader": "^0.23.1",
     "toastr": "^2.1.4",
-    "validator": "^10.8.0"
+    "validator": "^10.9.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/tests/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/tests/__mocks__/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      "^.+\\.js$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss)$": "jest-transform-css"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/react-runtime"
+    ]
   },
   "jest": {
     "moduleNameMapper": {
