@@ -3,10 +3,10 @@ import axios from 'axios';
 import toastr from 'toastr';
 
 
-export const getCheatsSuccess = cheats => {
+export const getCheatsSuccess = categories => {
   return {
     type: types.GET_CHEATS_SUCCESS,
-    cheats
+    categories
   }
 }
 

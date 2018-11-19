@@ -83,6 +83,8 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "gh-pages": "^2.0.1",
     "history": "^4.7.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-css-modules": "^1.1.0",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react-bootstrap": "^0.32.4",
@@ -98,9 +100,10 @@
     "validator": "^10.9.0"
   },
   "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/jest-css-modules",
     "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/src/tests/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/tests/__mocks__/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js",
+      "\\.(css|less)$": "identity-obj-proxy"
     },
     "transform": {
       "^.+\\.js?$": "babel-jest",
