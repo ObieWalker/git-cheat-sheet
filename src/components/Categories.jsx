@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import CategoryCard from './CategoryCard'
 import '../styles/App.css';
@@ -15,22 +14,26 @@ export class Categories extends Component {
   }
 
   render() {
-    const { cheats, search, deleteCategory, onShow, cheatModalShow } = this.props
-    let filteredCategories = cheats.filter((cheat) => {
-      return cheat.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
+    const { categories, search, deleteCategory, onShow, cheatModalShow, onCopy, deleteCheat, userId } = this.props
+    let filteredCategories = categories.filter((category) => {
+      return category.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
     })
   return (
       <div className="cards-container">
         {
-          cheats && cheats.length > 0 ? (
+          (categories && categories.length > 0 && (categories.userId === null || userId)) ? (
             filteredCategories.map((eachCategory) => (
               <CategoryCard 
+                onCopy={onCopy}
                 onShow={onShow}
                 deleteCategory={deleteCategory}
                 search={search}
                 cheats={eachCategory}
                 key={eachCategory._id}
                 cheatModalShow={cheatModalShow}
+                deleteCheat={deleteCheat}
+                userId={userId}
+                categoryId={eachCategory._id}
               /> 
             ))
           )
@@ -44,7 +47,7 @@ export class Categories extends Component {
 }
 
 const mapStateToProps = state => ({
-  cheats: state.cheats
+  categories: state.cheats
 });
 
 

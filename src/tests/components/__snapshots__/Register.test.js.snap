@@ -1,0 +1,1669 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register Component renders component successfully 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Register
+    history={
+      Object {
+        "push": [MockFunction],
+      }
+    }
+    registerUser={
+      Object {
+        "registerUserError": "",
+      }
+    }
+    registerUserAction={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <br />,
+        <h3
+          style={
+            Object {
+              "fontFamily": "serif",
+            }
+          }
+        >
+          Enter Registration Details.
+        </h3>,
+        <hr />,
+        "",
+        <br />,
+        <div
+          className="container"
+        >
+          <form
+            className="col s12 m6 push-m3 l4 push-l4"
+          >
+            <div
+              className="row"
+            >
+              <label
+                htmlFor="username"
+              >
+                Username:
+              </label>
+              <div
+                className="input-field col s12 m6 l6"
+              >
+                <input
+                  className="validate username"
+                  id="username"
+                  name="username"
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="text"
+                />
+              </div>
+              <br />
+              <label
+                htmlFor="email"
+              >
+                Email:
+              </label>
+              <div
+                className="input-field col s12 m6 l6"
+              >
+                <input
+                  className="validate email"
+                  id="email"
+                  name="email"
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="email"
+                />
+              </div>
+            </div>
+            <br />
+            <div
+              className="row"
+            >
+              <label
+                htmlFor="password"
+              >
+                Password:
+              </label>
+              <div
+                className="input-field col s12 m6 l6"
+              >
+                <input
+                  className="password"
+                  id="password"
+                  name="password"
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="password"
+                />
+              </div>
+              <br />
+              <label
+                htmlFor="password2"
+              >
+                Confirm Password:
+              </label>
+              <div
+                className="input-field col s12 m6 l6"
+              >
+                <input
+                  className="validate verifyPassword"
+                  id="password2"
+                  name="verifyPassword"
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="password"
+                />
+              </div>
+            </div>
+            <br />
+            <p>
+              Already have an account? 
+              <Link
+                replace={false}
+                to="/"
+              >
+                Click here to Sign In 
+              </Link>
+            </p>
+            <button
+              className="waves-effect waves-light btn right hoverable indigo"
+              onClick={[Function]}
+              type="submit"
+            >
+              register
+            </button>
+            <br />
+          </form>
+          <br />
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Enter Registration Details.",
+          "style": Object {
+            "fontFamily": "serif",
+          },
+        },
+        "ref": null,
+        "rendered": "Enter Registration Details.",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+      "",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            null,
+            <form
+              className="col s12 m6 push-m3 l4 push-l4"
+            >
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="username"
+                >
+                  Username:
+                </label>
+                <div
+                  className="input-field col s12 m6 l6"
+                >
+                  <input
+                    className="validate username"
+                    id="username"
+                    name="username"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="text"
+                  />
+                </div>
+                <br />
+                <label
+                  htmlFor="email"
+                >
+                  Email:
+                </label>
+                <div
+                  className="input-field col s12 m6 l6"
+                >
+                  <input
+                    className="validate email"
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="email"
+                  />
+                </div>
+              </div>
+              <br />
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="password"
+                >
+                  Password:
+                </label>
+                <div
+                  className="input-field col s12 m6 l6"
+                >
+                  <input
+                    className="password"
+                    id="password"
+                    name="password"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="password"
+                  />
+                </div>
+                <br />
+                <label
+                  htmlFor="password2"
+                >
+                  Confirm Password:
+                </label>
+                <div
+                  className="input-field col s12 m6 l6"
+                >
+                  <input
+                    className="validate verifyPassword"
+                    id="password2"
+                    name="verifyPassword"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="password"
+                  />
+                </div>
+              </div>
+              <br />
+              <p>
+                Already have an account? 
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Click here to Sign In 
+                </Link>
+              </p>
+              <button
+                className="waves-effect waves-light btn right hoverable indigo"
+                onClick={[Function]}
+                type="submit"
+              >
+                register
+              </button>
+              <br />
+            </form>,
+            <br />,
+          ],
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Array [
+          null,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="row"
+                >
+                  <label
+                    htmlFor="username"
+                  >
+                    Username:
+                  </label>
+                  <div
+                    className="input-field col s12 m6 l6"
+                  >
+                    <input
+                      className="validate username"
+                      id="username"
+                      name="username"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="text"
+                    />
+                  </div>
+                  <br />
+                  <label
+                    htmlFor="email"
+                  >
+                    Email:
+                  </label>
+                  <div
+                    className="input-field col s12 m6 l6"
+                  >
+                    <input
+                      className="validate email"
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="email"
+                    />
+                  </div>
+                </div>,
+                <br />,
+                <div
+                  className="row"
+                >
+                  <label
+                    htmlFor="password"
+                  >
+                    Password:
+                  </label>
+                  <div
+                    className="input-field col s12 m6 l6"
+                  >
+                    <input
+                      className="password"
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="password"
+                    />
+                  </div>
+                  <br />
+                  <label
+                    htmlFor="password2"
+                  >
+                    Confirm Password:
+                  </label>
+                  <div
+                    className="input-field col s12 m6 l6"
+                  >
+                    <input
+                      className="validate verifyPassword"
+                      id="password2"
+                      name="verifyPassword"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="password"
+                    />
+                  </div>
+                </div>,
+                <br />,
+                <p>
+                  Already have an account? 
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    Click here to Sign In 
+                  </Link>
+                </p>,
+                <button
+                  className="waves-effect waves-light btn right hoverable indigo"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  register
+                </button>,
+                <br />,
+              ],
+              "className": "col s12 m6 push-m3 l4 push-l4",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      htmlFor="username"
+                    >
+                      Username:
+                    </label>,
+                    <div
+                      className="input-field col s12 m6 l6"
+                    >
+                      <input
+                        className="validate username"
+                        id="username"
+                        name="username"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="text"
+                      />
+                    </div>,
+                    <br />,
+                    <label
+                      htmlFor="email"
+                    >
+                      Email:
+                    </label>,
+                    <div
+                      className="input-field col s12 m6 l6"
+                    >
+                      <input
+                        className="validate email"
+                        id="email"
+                        name="email"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="email"
+                      />
+                    </div>,
+                  ],
+                  "className": "row",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Username:",
+                      "htmlFor": "username",
+                    },
+                    "ref": null,
+                    "rendered": "Username:",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <input
+                          className="validate username"
+                          id="username"
+                          name="username"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          type="text"
+                        />,
+                        undefined,
+                      ],
+                      "className": "input-field col s12 m6 l6",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "validate username",
+                          "id": "username",
+                          "name": "username",
+                          "onChange": [Function],
+                          "onFocus": [Function],
+                          "type": "text",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "input",
+                      },
+                      undefined,
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Email:",
+                      "htmlFor": "email",
+                    },
+                    "ref": null,
+                    "rendered": "Email:",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <input
+                          className="validate email"
+                          id="email"
+                          name="email"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          type="email"
+                        />,
+                        undefined,
+                      ],
+                      "className": "input-field col s12 m6 l6",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "validate email",
+                          "id": "email",
+                          "name": "email",
+                          "onChange": [Function],
+                          "onFocus": [Function],
+                          "type": "email",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "input",
+                      },
+                      undefined,
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      htmlFor="password"
+                    >
+                      Password:
+                    </label>,
+                    <div
+                      className="input-field col s12 m6 l6"
+                    >
+                      <input
+                        className="password"
+                        id="password"
+                        name="password"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="password"
+                      />
+                    </div>,
+                    <br />,
+                    <label
+                      htmlFor="password2"
+                    >
+                      Confirm Password:
+                    </label>,
+                    <div
+                      className="input-field col s12 m6 l6"
+                    >
+                      <input
+                        className="validate verifyPassword"
+                        id="password2"
+                        name="verifyPassword"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="password"
+                      />
+                    </div>,
+                  ],
+                  "className": "row",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Password:",
+                      "htmlFor": "password",
+                    },
+                    "ref": null,
+                    "rendered": "Password:",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <input
+                          className="password"
+                          id="password"
+                          name="password"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          type="password"
+                        />,
+                        undefined,
+                      ],
+                      "className": "input-field col s12 m6 l6",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "password",
+                          "id": "password",
+                          "name": "password",
+                          "onChange": [Function],
+                          "onFocus": [Function],
+                          "type": "password",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "input",
+                      },
+                      undefined,
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Confirm Password:",
+                      "htmlFor": "password2",
+                    },
+                    "ref": null,
+                    "rendered": "Confirm Password:",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <input
+                          className="validate verifyPassword"
+                          id="password2"
+                          name="verifyPassword"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          type="password"
+                        />,
+                        undefined,
+                      ],
+                      "className": "input-field col s12 m6 l6",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "validate verifyPassword",
+                          "id": "password2",
+                          "name": "verifyPassword",
+                          "onChange": [Function],
+                          "onFocus": [Function],
+                          "type": "password",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "input",
+                      },
+                      undefined,
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Already have an account? ",
+                    <Link
+                      replace={false}
+                      to="/"
+                    >
+                      Click here to Sign In 
+                    </Link>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Already have an account? ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Click here to Sign In ",
+                      "replace": false,
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Click here to Sign In ",
+                    "type": [Function],
+                  },
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "register",
+                  "className": "waves-effect waves-light btn right hoverable indigo",
+                  "onClick": [Function],
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": "register",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+            ],
+            "type": "form",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <br />,
+          <h3
+            style={
+              Object {
+                "fontFamily": "serif",
+              }
+            }
+          >
+            Enter Registration Details.
+          </h3>,
+          <hr />,
+          "",
+          <br />,
+          <div
+            className="container"
+          >
+            <form
+              className="col s12 m6 push-m3 l4 push-l4"
+            >
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="username"
+                >
+                  Username:
+                </label>
+                <div
+                  className="input-field col s12 m6 l6"
+                >
+                  <input
+                    className="validate username"
+                    id="username"
+                    name="username"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="text"
+                  />
+                </div>
+                <br />
+                <label
+                  htmlFor="email"
+                >
+                  Email:
+                </label>
+                <div
+                  className="input-field col s12 m6 l6"
+                >
+                  <input
+                    className="validate email"
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="email"
+                  />
+                </div>
+              </div>
+              <br />
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="password"
+                >
+                  Password:
+                </label>
+                <div
+                  className="input-field col s12 m6 l6"
+                >
+                  <input
+                    className="password"
+                    id="password"
+                    name="password"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="password"
+                  />
+                </div>
+                <br />
+                <label
+                  htmlFor="password2"
+                >
+                  Confirm Password:
+                </label>
+                <div
+                  className="input-field col s12 m6 l6"
+                >
+                  <input
+                    className="validate verifyPassword"
+                    id="password2"
+                    name="verifyPassword"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="password"
+                  />
+                </div>
+              </div>
+              <br />
+              <p>
+                Already have an account? 
+                <Link
+                  replace={false}
+                  to="/"
+                >
+                  Click here to Sign In 
+                </Link>
+              </p>
+              <button
+                className="waves-effect waves-light btn right hoverable indigo"
+                onClick={[Function]}
+                type="submit"
+              >
+                register
+              </button>
+              <br />
+            </form>
+            <br />
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Enter Registration Details.",
+            "style": Object {
+              "fontFamily": "serif",
+            },
+          },
+          "ref": null,
+          "rendered": "Enter Registration Details.",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+        "",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              null,
+              <form
+                className="col s12 m6 push-m3 l4 push-l4"
+              >
+                <div
+                  className="row"
+                >
+                  <label
+                    htmlFor="username"
+                  >
+                    Username:
+                  </label>
+                  <div
+                    className="input-field col s12 m6 l6"
+                  >
+                    <input
+                      className="validate username"
+                      id="username"
+                      name="username"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="text"
+                    />
+                  </div>
+                  <br />
+                  <label
+                    htmlFor="email"
+                  >
+                    Email:
+                  </label>
+                  <div
+                    className="input-field col s12 m6 l6"
+                  >
+                    <input
+                      className="validate email"
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="email"
+                    />
+                  </div>
+                </div>
+                <br />
+                <div
+                  className="row"
+                >
+                  <label
+                    htmlFor="password"
+                  >
+                    Password:
+                  </label>
+                  <div
+                    className="input-field col s12 m6 l6"
+                  >
+                    <input
+                      className="password"
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="password"
+                    />
+                  </div>
+                  <br />
+                  <label
+                    htmlFor="password2"
+                  >
+                    Confirm Password:
+                  </label>
+                  <div
+                    className="input-field col s12 m6 l6"
+                  >
+                    <input
+                      className="validate verifyPassword"
+                      id="password2"
+                      name="verifyPassword"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="password"
+                    />
+                  </div>
+                </div>
+                <br />
+                <p>
+                  Already have an account? 
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    Click here to Sign In 
+                  </Link>
+                </p>
+                <button
+                  className="waves-effect waves-light btn right hoverable indigo"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  register
+                </button>
+                <br />
+              </form>,
+              <br />,
+            ],
+            "className": "container",
+          },
+          "ref": null,
+          "rendered": Array [
+            null,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="row"
+                  >
+                    <label
+                      htmlFor="username"
+                    >
+                      Username:
+                    </label>
+                    <div
+                      className="input-field col s12 m6 l6"
+                    >
+                      <input
+                        className="validate username"
+                        id="username"
+                        name="username"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="text"
+                      />
+                    </div>
+                    <br />
+                    <label
+                      htmlFor="email"
+                    >
+                      Email:
+                    </label>
+                    <div
+                      className="input-field col s12 m6 l6"
+                    >
+                      <input
+                        className="validate email"
+                        id="email"
+                        name="email"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="email"
+                      />
+                    </div>
+                  </div>,
+                  <br />,
+                  <div
+                    className="row"
+                  >
+                    <label
+                      htmlFor="password"
+                    >
+                      Password:
+                    </label>
+                    <div
+                      className="input-field col s12 m6 l6"
+                    >
+                      <input
+                        className="password"
+                        id="password"
+                        name="password"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="password"
+                      />
+                    </div>
+                    <br />
+                    <label
+                      htmlFor="password2"
+                    >
+                      Confirm Password:
+                    </label>
+                    <div
+                      className="input-field col s12 m6 l6"
+                    >
+                      <input
+                        className="validate verifyPassword"
+                        id="password2"
+                        name="verifyPassword"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="password"
+                      />
+                    </div>
+                  </div>,
+                  <br />,
+                  <p>
+                    Already have an account? 
+                    <Link
+                      replace={false}
+                      to="/"
+                    >
+                      Click here to Sign In 
+                    </Link>
+                  </p>,
+                  <button
+                    className="waves-effect waves-light btn right hoverable indigo"
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    register
+                  </button>,
+                  <br />,
+                ],
+                "className": "col s12 m6 push-m3 l4 push-l4",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <label
+                        htmlFor="username"
+                      >
+                        Username:
+                      </label>,
+                      <div
+                        className="input-field col s12 m6 l6"
+                      >
+                        <input
+                          className="validate username"
+                          id="username"
+                          name="username"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          type="text"
+                        />
+                      </div>,
+                      <br />,
+                      <label
+                        htmlFor="email"
+                      >
+                        Email:
+                      </label>,
+                      <div
+                        className="input-field col s12 m6 l6"
+                      >
+                        <input
+                          className="validate email"
+                          id="email"
+                          name="email"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          type="email"
+                        />
+                      </div>,
+                    ],
+                    "className": "row",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Username:",
+                        "htmlFor": "username",
+                      },
+                      "ref": null,
+                      "rendered": "Username:",
+                      "type": "label",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <input
+                            className="validate username"
+                            id="username"
+                            name="username"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            type="text"
+                          />,
+                          undefined,
+                        ],
+                        "className": "input-field col s12 m6 l6",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "validate username",
+                            "id": "username",
+                            "name": "username",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "type": "text",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                        undefined,
+                      ],
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": "br",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Email:",
+                        "htmlFor": "email",
+                      },
+                      "ref": null,
+                      "rendered": "Email:",
+                      "type": "label",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <input
+                            className="validate email"
+                            id="email"
+                            name="email"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            type="email"
+                          />,
+                          undefined,
+                        ],
+                        "className": "input-field col s12 m6 l6",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "validate email",
+                            "id": "email",
+                            "name": "email",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "type": "email",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                        undefined,
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <label
+                        htmlFor="password"
+                      >
+                        Password:
+                      </label>,
+                      <div
+                        className="input-field col s12 m6 l6"
+                      >
+                        <input
+                          className="password"
+                          id="password"
+                          name="password"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          type="password"
+                        />
+                      </div>,
+                      <br />,
+                      <label
+                        htmlFor="password2"
+                      >
+                        Confirm Password:
+                      </label>,
+                      <div
+                        className="input-field col s12 m6 l6"
+                      >
+                        <input
+                          className="validate verifyPassword"
+                          id="password2"
+                          name="verifyPassword"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          type="password"
+                        />
+                      </div>,
+                    ],
+                    "className": "row",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Password:",
+                        "htmlFor": "password",
+                      },
+                      "ref": null,
+                      "rendered": "Password:",
+                      "type": "label",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <input
+                            className="password"
+                            id="password"
+                            name="password"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            type="password"
+                          />,
+                          undefined,
+                        ],
+                        "className": "input-field col s12 m6 l6",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "password",
+                            "id": "password",
+                            "name": "password",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "type": "password",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                        undefined,
+                      ],
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {},
+                      "ref": null,
+                      "rendered": null,
+                      "type": "br",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Confirm Password:",
+                        "htmlFor": "password2",
+                      },
+                      "ref": null,
+                      "rendered": "Confirm Password:",
+                      "type": "label",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <input
+                            className="validate verifyPassword"
+                            id="password2"
+                            name="verifyPassword"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            type="password"
+                          />,
+                          undefined,
+                        ],
+                        "className": "input-field col s12 m6 l6",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "validate verifyPassword",
+                            "id": "password2",
+                            "name": "verifyPassword",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "type": "password",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                        undefined,
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Already have an account? ",
+                      <Link
+                        replace={false}
+                        to="/"
+                      >
+                        Click here to Sign In 
+                      </Link>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Already have an account? ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Click here to Sign In ",
+                        "replace": false,
+                        "to": "/",
+                      },
+                      "ref": null,
+                      "rendered": "Click here to Sign In ",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "register",
+                    "className": "waves-effect waves-light btn right hoverable indigo",
+                    "onClick": [Function],
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "register",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+              ],
+              "type": "form",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

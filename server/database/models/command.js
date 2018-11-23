@@ -8,7 +8,8 @@ const Command = new mongoose.Schema({
   description: { type: String, default: '' },
   command: { type: String, default: '' },
   keywords: { type: [String], default: '' },
-  id: { type: String }
+  id: { type: String },
+  userId: { type: String, default: null}
 })
 
 module.exports = mongoose.model('Command', Command)

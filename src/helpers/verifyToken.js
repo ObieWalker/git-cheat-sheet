@@ -13,7 +13,6 @@ const verifyToken = () => {
       if (error) {
         verified = false;
       } else {
-        console.log("verified")
         verified = true;
       }
     });

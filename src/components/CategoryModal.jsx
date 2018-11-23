@@ -24,7 +24,7 @@ const CategoryModal= ({category, addCategory, editCategory, updateDetails, show,
             )}
             <input
               type="text"
-              className="form-control"
+              className="form-control ca-title"
               id="categoryTitle"
               name="categoryTitle"
               defaultValue={category.name || ''}

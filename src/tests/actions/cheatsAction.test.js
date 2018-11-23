@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import expect from 'expect';
-import { getAllCheats, addCategory, deleteCategory, editCategory, addCheat} from '../../actions/cheatsAction';
+import { getAllCheats, addCategory, deleteCategory, editCategory, addCheat, deleteCheat} from '../../actions/cheatsAction';
 import * as types from '../../actions/actionTypes';
 import categories from '../__mocks__/categoriesData';
 
@@ -88,6 +88,38 @@ describe('delete Category actions', () => {
     ];
     const store = mockStore({category: {}});
     return store.dispatch(deleteCategory(categoryId)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});
+
+describe('delete Cheat actions', () => {
+  beforeEach(() => {
+    moxios.install();
+  });
+  afterEach(() => {
+    moxios.uninstall();
+  });
+  it('handles DELETE_CATEGORY_SUCCESS after deleting cheat', () => {
+    const categoryId = 3
+    const cheatId = 3
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: {
+          cheatDetails: {
+            categoryId,
+            cheatId
+          }
+        }
+      });
+    });
+    const expectedActions = [
+      { type: types.DELETE_CHEAT_SUCCESS, cheatId, categoryId }
+    ];
+    const store = mockStore({category: {}});
+    return store.dispatch(deleteCheat(cheatId, categoryId)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

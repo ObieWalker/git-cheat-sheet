@@ -7,7 +7,8 @@ const Category = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Command'
     }
-  ]
+  ],
+  userId: { type: String, default: null}
 })
 
 module.exports = mongoose.model('Category', Category)

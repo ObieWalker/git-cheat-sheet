@@ -1,0 +1,1218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cheats Component renders component successfully 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CheatModal
+    addCheat={[MockFunction]}
+    category={Object {}}
+    categoryTitle=""
+    errors={
+      Object {
+        "command": "there is error too",
+        "description": "there is error",
+      }
+    }
+    onHide={[MockFunction]}
+    show={false}
+    updateDetails={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Modal
+        animation={true}
+        aria-labelledby="contained-modal-title"
+        autoFocus={true}
+        backdrop={true}
+        bsClass="modal"
+        dialogComponentClass={[Function]}
+        enforceFocus={true}
+        keyboard={true}
+        manager={
+          ModalManager {
+            "add": [Function],
+            "containers": Array [],
+            "data": Array [],
+            "handleContainerOverflow": true,
+            "hideSiblingNodes": true,
+            "isTopModal": [Function],
+            "modals": Array [],
+            "remove": [Function],
+          }
+        }
+        onHide={[MockFunction]}
+        renderBackdrop={[Function]}
+        restoreFocus={true}
+        show={false}
+      >
+        <ModalHeader
+          bsClass="modal-header"
+          closeButton={true}
+          closeLabel="Close"
+        >
+          <ModalTitle
+            bsClass="modal-title"
+            componentClass="h4"
+            id="contained-modal-title"
+          >
+            Add cheat to "
+            
+            "
+          </ModalTitle>
+        </ModalHeader>
+        <ModalBody
+          bsClass="modal-body"
+          componentClass="div"
+          style={
+            Object {
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "width": "100%",
+            }
+          }
+        >
+          <label
+            className="active"
+            htmlFor="name"
+          >
+            Cheat Description:
+          </label>
+          <span
+            className="alert-danger"
+          >
+            <br />
+            there is error
+          </span>
+          <input
+            className="form-control ch-description"
+            id="description"
+            name="description"
+            onChange={[MockFunction]}
+            required={true}
+            type="text"
+          />
+          <br />
+          <label
+            className="active"
+            htmlFor="name"
+          >
+            Cheat Command:
+          </label>
+          <span
+            className="alert-danger"
+          >
+            <br />
+            there is error too
+          </span>
+          <input
+            className="form-control ch-command"
+            id="command"
+            name="command"
+            onChange={[MockFunction]}
+            required={true}
+            type="text"
+          />
+          <br />
+          <label
+            className="active"
+            htmlFor="name"
+          >
+            Keywords(optional):
+          </label>
+          <input
+            className="form-control ch-keywords"
+            defaultValue="git, start, branch"
+            id="keywords"
+            name="keywords"
+            onChange={[MockFunction]}
+            type="text"
+          />
+          <br />
+        </ModalBody>
+        <ModalFooter
+          bsClass="modal-footer"
+          componentClass="div"
+        >
+          <button
+            className="waves-effect waves-dark btn right hoverable dark-green btn btn-primary"
+            id="add-grocery"
+            onClick={[Function]}
+            type="submit"
+          >
+            Add Cheat
+          </button>
+        </ModalFooter>
+      </Modal>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "animation": true,
+        "aria-labelledby": "contained-modal-title",
+        "autoFocus": true,
+        "backdrop": true,
+        "bsClass": "modal",
+        "children": Array [
+          <ModalHeader
+            bsClass="modal-header"
+            closeButton={true}
+            closeLabel="Close"
+          >
+            <ModalTitle
+              bsClass="modal-title"
+              componentClass="h4"
+              id="contained-modal-title"
+            >
+              Add cheat to "
+              
+              "
+            </ModalTitle>
+          </ModalHeader>,
+          <ModalBody
+            bsClass="modal-body"
+            componentClass="div"
+            style={
+              Object {
+                "marginLeft": "auto",
+                "marginRight": "auto",
+                "width": "100%",
+              }
+            }
+          >
+            <label
+              className="active"
+              htmlFor="name"
+            >
+              Cheat Description:
+            </label>
+            <span
+              className="alert-danger"
+            >
+              <br />
+              there is error
+            </span>
+            <input
+              className="form-control ch-description"
+              id="description"
+              name="description"
+              onChange={[MockFunction]}
+              required={true}
+              type="text"
+            />
+            <br />
+            <label
+              className="active"
+              htmlFor="name"
+            >
+              Cheat Command:
+            </label>
+            <span
+              className="alert-danger"
+            >
+              <br />
+              there is error too
+            </span>
+            <input
+              className="form-control ch-command"
+              id="command"
+              name="command"
+              onChange={[MockFunction]}
+              required={true}
+              type="text"
+            />
+            <br />
+            <label
+              className="active"
+              htmlFor="name"
+            >
+              Keywords(optional):
+            </label>
+            <input
+              className="form-control ch-keywords"
+              defaultValue="git, start, branch"
+              id="keywords"
+              name="keywords"
+              onChange={[MockFunction]}
+              type="text"
+            />
+            <br />
+          </ModalBody>,
+          <ModalFooter
+            bsClass="modal-footer"
+            componentClass="div"
+          >
+            <button
+              className="waves-effect waves-dark btn right hoverable dark-green btn btn-primary"
+              id="add-grocery"
+              onClick={[Function]}
+              type="submit"
+            >
+              Add Cheat
+            </button>
+          </ModalFooter>,
+        ],
+        "dialogComponentClass": [Function],
+        "enforceFocus": true,
+        "keyboard": true,
+        "manager": ModalManager {
+          "add": [Function],
+          "containers": Array [],
+          "data": Array [],
+          "handleContainerOverflow": true,
+          "hideSiblingNodes": true,
+          "isTopModal": [Function],
+          "modals": Array [],
+          "remove": [Function],
+        },
+        "onHide": [MockFunction],
+        "renderBackdrop": [Function],
+        "restoreFocus": true,
+        "show": false,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "modal-header",
+            "children": <ModalTitle
+              bsClass="modal-title"
+              componentClass="h4"
+              id="contained-modal-title"
+            >
+              Add cheat to "
+              
+              "
+            </ModalTitle>,
+            "closeButton": true,
+            "closeLabel": "Close",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "modal-title",
+              "children": Array [
+                "Add cheat to \\"",
+                "",
+                "\\"",
+              ],
+              "componentClass": "h4",
+              "id": "contained-modal-title",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Add cheat to \\"",
+              "",
+              "\\"",
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "modal-body",
+            "children": Array [
+              <label
+                className="active"
+                htmlFor="name"
+              >
+                Cheat Description:
+              </label>,
+              <span
+                className="alert-danger"
+              >
+                <br />
+                there is error
+              </span>,
+              <input
+                className="form-control ch-description"
+                id="description"
+                name="description"
+                onChange={[MockFunction]}
+                required={true}
+                type="text"
+              />,
+              <br />,
+              <label
+                className="active"
+                htmlFor="name"
+              >
+                Cheat Command:
+              </label>,
+              <span
+                className="alert-danger"
+              >
+                <br />
+                there is error too
+              </span>,
+              <input
+                className="form-control ch-command"
+                id="command"
+                name="command"
+                onChange={[MockFunction]}
+                required={true}
+                type="text"
+              />,
+              <br />,
+              <label
+                className="active"
+                htmlFor="name"
+              >
+                Keywords(optional):
+              </label>,
+              <input
+                className="form-control ch-keywords"
+                defaultValue="git, start, branch"
+                id="keywords"
+                name="keywords"
+                onChange={[MockFunction]}
+                type="text"
+              />,
+              <br />,
+            ],
+            "componentClass": "div",
+            "style": Object {
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "width": "100%",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cheat Description:",
+                "className": "active",
+                "htmlFor": "name",
+              },
+              "ref": null,
+              "rendered": "Cheat Description:",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <br />,
+                  "there is error",
+                ],
+                "className": "alert-danger",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                "there is error",
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "form-control ch-description",
+                "id": "description",
+                "name": "description",
+                "onChange": [MockFunction],
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cheat Command:",
+                "className": "active",
+                "htmlFor": "name",
+              },
+              "ref": null,
+              "rendered": "Cheat Command:",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <br />,
+                  "there is error too",
+                ],
+                "className": "alert-danger",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                "there is error too",
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "form-control ch-command",
+                "id": "command",
+                "name": "command",
+                "onChange": [MockFunction],
+                "required": true,
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Keywords(optional):",
+                "className": "active",
+                "htmlFor": "name",
+              },
+              "ref": null,
+              "rendered": "Keywords(optional):",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "form-control ch-keywords",
+                "defaultValue": "git, start, branch",
+                "id": "keywords",
+                "name": "keywords",
+                "onChange": [MockFunction],
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "modal-footer",
+            "children": <button
+              className="waves-effect waves-dark btn right hoverable dark-green btn btn-primary"
+              id="add-grocery"
+              onClick={[Function]}
+              type="submit"
+            >
+              Add Cheat
+            </button>,
+            "componentClass": "div",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Add Cheat",
+              "className": "waves-effect waves-dark btn right hoverable dark-green btn btn-primary",
+              "id": "add-grocery",
+              "onClick": [Function],
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Add Cheat",
+            "type": "button",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Modal
+          animation={true}
+          aria-labelledby="contained-modal-title"
+          autoFocus={true}
+          backdrop={true}
+          bsClass="modal"
+          dialogComponentClass={[Function]}
+          enforceFocus={true}
+          keyboard={true}
+          manager={
+            ModalManager {
+              "add": [Function],
+              "containers": Array [],
+              "data": Array [],
+              "handleContainerOverflow": true,
+              "hideSiblingNodes": true,
+              "isTopModal": [Function],
+              "modals": Array [],
+              "remove": [Function],
+            }
+          }
+          onHide={[MockFunction]}
+          renderBackdrop={[Function]}
+          restoreFocus={true}
+          show={false}
+        >
+          <ModalHeader
+            bsClass="modal-header"
+            closeButton={true}
+            closeLabel="Close"
+          >
+            <ModalTitle
+              bsClass="modal-title"
+              componentClass="h4"
+              id="contained-modal-title"
+            >
+              Add cheat to "
+              
+              "
+            </ModalTitle>
+          </ModalHeader>
+          <ModalBody
+            bsClass="modal-body"
+            componentClass="div"
+            style={
+              Object {
+                "marginLeft": "auto",
+                "marginRight": "auto",
+                "width": "100%",
+              }
+            }
+          >
+            <label
+              className="active"
+              htmlFor="name"
+            >
+              Cheat Description:
+            </label>
+            <span
+              className="alert-danger"
+            >
+              <br />
+              there is error
+            </span>
+            <input
+              className="form-control ch-description"
+              id="description"
+              name="description"
+              onChange={[MockFunction]}
+              required={true}
+              type="text"
+            />
+            <br />
+            <label
+              className="active"
+              htmlFor="name"
+            >
+              Cheat Command:
+            </label>
+            <span
+              className="alert-danger"
+            >
+              <br />
+              there is error too
+            </span>
+            <input
+              className="form-control ch-command"
+              id="command"
+              name="command"
+              onChange={[MockFunction]}
+              required={true}
+              type="text"
+            />
+            <br />
+            <label
+              className="active"
+              htmlFor="name"
+            >
+              Keywords(optional):
+            </label>
+            <input
+              className="form-control ch-keywords"
+              defaultValue="git, start, branch"
+              id="keywords"
+              name="keywords"
+              onChange={[MockFunction]}
+              type="text"
+            />
+            <br />
+          </ModalBody>
+          <ModalFooter
+            bsClass="modal-footer"
+            componentClass="div"
+          >
+            <button
+              className="waves-effect waves-dark btn right hoverable dark-green btn btn-primary"
+              id="add-grocery"
+              onClick={[Function]}
+              type="submit"
+            >
+              Add Cheat
+            </button>
+          </ModalFooter>
+        </Modal>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "animation": true,
+          "aria-labelledby": "contained-modal-title",
+          "autoFocus": true,
+          "backdrop": true,
+          "bsClass": "modal",
+          "children": Array [
+            <ModalHeader
+              bsClass="modal-header"
+              closeButton={true}
+              closeLabel="Close"
+            >
+              <ModalTitle
+                bsClass="modal-title"
+                componentClass="h4"
+                id="contained-modal-title"
+              >
+                Add cheat to "
+                
+                "
+              </ModalTitle>
+            </ModalHeader>,
+            <ModalBody
+              bsClass="modal-body"
+              componentClass="div"
+              style={
+                Object {
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": "100%",
+                }
+              }
+            >
+              <label
+                className="active"
+                htmlFor="name"
+              >
+                Cheat Description:
+              </label>
+              <span
+                className="alert-danger"
+              >
+                <br />
+                there is error
+              </span>
+              <input
+                className="form-control ch-description"
+                id="description"
+                name="description"
+                onChange={[MockFunction]}
+                required={true}
+                type="text"
+              />
+              <br />
+              <label
+                className="active"
+                htmlFor="name"
+              >
+                Cheat Command:
+              </label>
+              <span
+                className="alert-danger"
+              >
+                <br />
+                there is error too
+              </span>
+              <input
+                className="form-control ch-command"
+                id="command"
+                name="command"
+                onChange={[MockFunction]}
+                required={true}
+                type="text"
+              />
+              <br />
+              <label
+                className="active"
+                htmlFor="name"
+              >
+                Keywords(optional):
+              </label>
+              <input
+                className="form-control ch-keywords"
+                defaultValue="git, start, branch"
+                id="keywords"
+                name="keywords"
+                onChange={[MockFunction]}
+                type="text"
+              />
+              <br />
+            </ModalBody>,
+            <ModalFooter
+              bsClass="modal-footer"
+              componentClass="div"
+            >
+              <button
+                className="waves-effect waves-dark btn right hoverable dark-green btn btn-primary"
+                id="add-grocery"
+                onClick={[Function]}
+                type="submit"
+              >
+                Add Cheat
+              </button>
+            </ModalFooter>,
+          ],
+          "dialogComponentClass": [Function],
+          "enforceFocus": true,
+          "keyboard": true,
+          "manager": ModalManager {
+            "add": [Function],
+            "containers": Array [],
+            "data": Array [],
+            "handleContainerOverflow": true,
+            "hideSiblingNodes": true,
+            "isTopModal": [Function],
+            "modals": Array [],
+            "remove": [Function],
+          },
+          "onHide": [MockFunction],
+          "renderBackdrop": [Function],
+          "restoreFocus": true,
+          "show": false,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "modal-header",
+              "children": <ModalTitle
+                bsClass="modal-title"
+                componentClass="h4"
+                id="contained-modal-title"
+              >
+                Add cheat to "
+                
+                "
+              </ModalTitle>,
+              "closeButton": true,
+              "closeLabel": "Close",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "modal-title",
+                "children": Array [
+                  "Add cheat to \\"",
+                  "",
+                  "\\"",
+                ],
+                "componentClass": "h4",
+                "id": "contained-modal-title",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Add cheat to \\"",
+                "",
+                "\\"",
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "modal-body",
+              "children": Array [
+                <label
+                  className="active"
+                  htmlFor="name"
+                >
+                  Cheat Description:
+                </label>,
+                <span
+                  className="alert-danger"
+                >
+                  <br />
+                  there is error
+                </span>,
+                <input
+                  className="form-control ch-description"
+                  id="description"
+                  name="description"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="text"
+                />,
+                <br />,
+                <label
+                  className="active"
+                  htmlFor="name"
+                >
+                  Cheat Command:
+                </label>,
+                <span
+                  className="alert-danger"
+                >
+                  <br />
+                  there is error too
+                </span>,
+                <input
+                  className="form-control ch-command"
+                  id="command"
+                  name="command"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="text"
+                />,
+                <br />,
+                <label
+                  className="active"
+                  htmlFor="name"
+                >
+                  Keywords(optional):
+                </label>,
+                <input
+                  className="form-control ch-keywords"
+                  defaultValue="git, start, branch"
+                  id="keywords"
+                  name="keywords"
+                  onChange={[MockFunction]}
+                  type="text"
+                />,
+                <br />,
+              ],
+              "componentClass": "div",
+              "style": Object {
+                "marginLeft": "auto",
+                "marginRight": "auto",
+                "width": "100%",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Cheat Description:",
+                  "className": "active",
+                  "htmlFor": "name",
+                },
+                "ref": null,
+                "rendered": "Cheat Description:",
+                "type": "label",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <br />,
+                    "there is error",
+                  ],
+                  "className": "alert-danger",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  "there is error",
+                ],
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "form-control ch-description",
+                  "id": "description",
+                  "name": "description",
+                  "onChange": [MockFunction],
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Cheat Command:",
+                  "className": "active",
+                  "htmlFor": "name",
+                },
+                "ref": null,
+                "rendered": "Cheat Command:",
+                "type": "label",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <br />,
+                    "there is error too",
+                  ],
+                  "className": "alert-danger",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  "there is error too",
+                ],
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "form-control ch-command",
+                  "id": "command",
+                  "name": "command",
+                  "onChange": [MockFunction],
+                  "required": true,
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Keywords(optional):",
+                  "className": "active",
+                  "htmlFor": "name",
+                },
+                "ref": null,
+                "rendered": "Keywords(optional):",
+                "type": "label",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "form-control ch-keywords",
+                  "defaultValue": "git, start, branch",
+                  "id": "keywords",
+                  "name": "keywords",
+                  "onChange": [MockFunction],
+                  "type": "text",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "modal-footer",
+              "children": <button
+                className="waves-effect waves-dark btn right hoverable dark-green btn btn-primary"
+                id="add-grocery"
+                onClick={[Function]}
+                type="submit"
+              >
+                Add Cheat
+              </button>,
+              "componentClass": "div",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Add Cheat",
+                "className": "waves-effect waves-dark btn right hoverable dark-green btn btn-primary",
+                "id": "add-grocery",
+                "onClick": [Function],
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Add Cheat",
+              "type": "button",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

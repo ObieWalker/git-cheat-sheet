@@ -38,6 +38,14 @@ export const editCategorySuccess = category => {
   }
 }
 
+export const deleteCheatSuccess = (cheatId, categoryId) => {
+  return {
+    type: types.DELETE_CHEAT_SUCCESS,
+    cheatId,
+    categoryId
+  }
+}
+
 export const getAllCheats = () => (dispatch) => {
   return axios({
     method: 'GET',
@@ -61,7 +69,7 @@ export const addCategory = (category) => (dispatch) => {
     headers: {
       token: localStorage.getItem('token')
     },
-    data: {category}
+    data: category
   })
   .then(response => {
     toastr.success(response.data.message)
@@ -86,6 +94,28 @@ export const deleteCategory = (categoryId) => (dispatch) => {
   .then(response => {
     toastr.success(response.data.message)
     dispatch(deleteCategorySuccess(categoryId))
+  })
+  .catch((error) => {
+    toastr.error(error.response.data.message) 
+  });
+}
+
+export const deleteCheat = (cheatId, categoryId) => (dispatch) => {
+  if (axios.defaults.headers.common.token === '') {
+    axios.defaults.headers.common.token = localStorage.getItem('token');
+  }
+  return axios({
+    method: 'DELETE',
+    url: `/api/v1/cheats/${cheatId}`,
+    headers: {
+      token: localStorage.getItem('token')
+    },
+    data: {categoryId}
+  })
+  .then(response => {
+    const { cheatId, categoryId } = response.data.cheatDetails
+    toastr.success(response.data.message)
+    dispatch(deleteCheatSuccess(cheatId, categoryId))
   })
   .catch((error) => {
     toastr.error(error.response.data.message) 

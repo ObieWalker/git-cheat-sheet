@@ -50,3 +50,27 @@ describe('set current user actions to log out', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 })
+
+describe('set current user actions', () => {
+  beforeEach(() => {
+    moxios.install();
+  });
+  afterEach(() => {
+    moxios.uninstall();
+  });
+  it('handles SET_CURRENT_USER to log in a user', () => {
+    let user = users[0];
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 200,
+        response: {user}
+      });
+    });
+    const expectedActions = [{ type: types.SET_CURRENT_USER, user }];
+    const store = mockStore({ user: [] });
+    return store.dispatch(registerUser(user, [])).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+})

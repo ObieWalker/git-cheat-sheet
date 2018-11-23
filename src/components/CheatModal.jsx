@@ -24,7 +24,7 @@ const CheatModal= ({ addCheat, updateDetails, show, onHide, errors, categoryTitl
             )}
             <input
               type="text"
-              className="form-control"
+              className="form-control ch-description"
               id="description"
               name="description"
               required
@@ -42,7 +42,7 @@ const CheatModal= ({ addCheat, updateDetails, show, onHide, errors, categoryTitl
             )}
             <input
               type="text"
-              className="form-control"
+              className="form-control ch-command"
               id="command"
               name="command"
               required
@@ -55,7 +55,7 @@ const CheatModal= ({ addCheat, updateDetails, show, onHide, errors, categoryTitl
             </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control ch-keywords"
               id="keywords"
               name="keywords"
               defaultValue='git, start, branch'

@@ -39,7 +39,7 @@ let saltRound = 8;
 
   function getCategories(req, res) {
     Category.find()
-    .populate("command", "command description")
+    .populate("command", "command description userId")
     .exec()
     .then ((categories) => {
       if (categories) {
@@ -70,7 +70,8 @@ let saltRound = 8;
       category: req.body.id,
       command: req.body.cheat.command,
       description: req.body.cheat.description,
-      keywords: [req.body.cheat.keywords]
+      keywords: [req.body.cheat.keywords],
+      userId: req.body.cheat.userId
     })
     .then((cheat) => {
       Category.findOneAndUpdate({ _id : req.body.id }, { $push : { command : cheat._id }})
@@ -82,7 +83,8 @@ let saltRound = 8;
             _id: cheat._id,
             categoryId: req.body.id,
             command: cheat.command,
-            description: cheat.description
+            description: cheat.description,
+            userId: req.body.cheat.userId
           }
         })
       })
@@ -106,7 +108,10 @@ let saltRound = 8;
           message: `It seems category '${category[0].name}' already exists, try a different category name.`
         })
       }
-      Category.create({ name: req.body.category})
+      Category.create({ 
+        name: req.body.category,
+        userId: req.body.userId
+      })
       .then((category) => {
         if (category) {
           res.status(201).json({
@@ -128,19 +133,27 @@ let saltRound = 8;
 
   function deleteCheat(req, res) {
     const id = req.params.id
+    const categoryId = req.body.categoryId
     Cheat.findByIdAndDelete(id)
     .then((deletedCheat) => {
-      if (deletedCheat){
-        res.json({
-          success: true,
-          message: `The '${deletedCheat.command}' cheat has been deleted.`
-        })
-      } else {
-        res.status(404).json({
-          success: false,
-          message: "No such cheat"
-        });
-      }
+      Category.findOneAndUpdate({ _id : categoryId }, { $pull : { command : deletedCheat._id }})
+      .then(() => {
+        if (deletedCheat){
+          res.json({
+            success: true,
+            message: `The '${deletedCheat.command}' cheat has been deleted.`,
+            cheatDetails: {
+              categoryId,
+              cheatId: deletedCheat._id
+            }
+          })
+        } else {
+          res.status(404).json({
+            success: false,
+            message: "No such cheat"
+          });
+        }
+      })
     })
     .catch(err => {
       res.status(404).json({
@@ -243,6 +256,42 @@ let saltRound = 8;
     })
   }
 
+  function signup(req, res) {
+    return User.find({
+        email: req.body.email
+    }).then((user) => {
+      // checks to see if user already exist
+      if (user.length > 0) {
+        return res.status(409).json({
+          message: 'User already exists'
+        });
+      } // ensures both entries to password match
+      if (req.body.password !== req.body.verifyPassword) {
+        // passwords must match
+        return res.status(400).json({ message: 'passwords did not match' });
+      } // password encrypt at 2 raised to power 13
+      const myPassword = bcrypt.hashSync(req.body.password, saltRound);
+      // creates account
+      return User.create({
+        username: req.body.username,
+        password: myPassword,
+        email: req.body.email
+      })
+        .then((user) => {
+          const message = 'Your account has been created!, Your details';
+          return res.status(201).json({
+            message,
+            user: {
+              username: user.username,
+              email: user.email
+            }
+          });
+        })
+        .catch(error =>
+          res.status(500).json({ message: 'Server Error', error }));
+    });
+  }
+
   function signin(req, res) {
     User.findOne({
       email: req.body.email
@@ -298,6 +347,7 @@ let saltRound = 8;
   router.delete('/category/:id', auth.authenticate, deleteCategory)
   router.patch('/cheats/:id', auth.authenticate, updateCheat)
   router.patch('/category/:id', auth.authenticate, updateCategory)
+  router.post('/signup', signup)
   router.post('/signin', signin)
 
 export default router;

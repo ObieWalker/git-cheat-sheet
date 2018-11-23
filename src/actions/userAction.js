@@ -18,6 +18,14 @@ export function setCurrentUser(user) {
   };
 }
 
+export function registerUserSuccess(user) {
+  return {
+    type: types.SET_CURRENT_USER,
+    user
+  };
+}
+
+
 export const logOut = () => (dispatch) => {
   localStorage.removeItem('token');
   setAuthToken(false);
@@ -44,3 +52,16 @@ export const authenticateUser = (userDetails, history) => (dispatch) => {
   });
 }
 
+export const registerUser = userInfo => (dispatch) => {
+  return axios
+    .post('/api/v1/signup', userInfo)
+    .then((response) => {
+      const { token } = response.data;
+      localStorage.setItem('token', token);
+      setAuthToken(token);
+      dispatch(registerUserSuccess(response.data.user));
+    })
+    .catch((error) => {
+      toastr.error(error.response.data.message);
+    });
+};
