@@ -1,9 +1,9 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState'
 
-let newState, categoryIndex
+let newState, categoryIndex, cheatIndex
 
-export default function groceriesReducer(state = initialState.cheats, action) {
+export default function cheatsReducer(state = initialState.cheats, action) {
   switch (action.type) {
     case types.GET_CHEATS_SUCCESS:
       return action.categories;
@@ -43,6 +43,24 @@ export default function groceriesReducer(state = initialState.cheats, action) {
           newState.length
         )
       ]
+      return newState
+
+    case types.DELETE_CHEAT_SUCCESS:
+      newState =  [...state];
+      categoryIndex = state.findIndex(category => category._id === action.categoryId);
+      cheatIndex = state[categoryIndex].command.findIndex(cheat => cheat._id === action.cheatId);
+      let deletedCategory = [
+        ...newState[categoryIndex].command.filter(cheat => cheat._id !== action.cheatId)
+      ];
+      newState[categoryIndex].command = [...deletedCategory];
+      newState = [
+        ...newState.slice(0, categoryIndex),
+        newState[categoryIndex],
+        ...newState.slice(
+          categoryIndex + 1,
+          newState.length
+        )
+      ];
       return newState
 
     default: 

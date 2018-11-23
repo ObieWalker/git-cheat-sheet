@@ -111,6 +111,15 @@ export class Login extends Component {
               )}
             </div>
             <br />
+            <div className="row">
+              <div className="col s12 m6 push-m3 l4 push-l4">
+                <p> 
+                  {'Do not have an account? You can register '}
+                  <Link to="/register">here</Link>
+                </p>
+              </div>
+            </div>
+            <br />
             <div className="row col s12 m6 push-m3 l2 push-l4">
               <button
                 type="submit"

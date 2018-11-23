@@ -4,7 +4,8 @@
     "src/**/*.{js,jsx}",
     "!src/index.js",
     "!src/reducers/index.js",
-    "!src/store/configureStore.js"
+    "!src/store/configureStore.js",
+    "!src/helpers/*.{js,jsx}"
     ],
   "setupTestFrameworkScriptFile": "<rootDir>/src/tests/setup.js",
   "moduleNameMapper": {

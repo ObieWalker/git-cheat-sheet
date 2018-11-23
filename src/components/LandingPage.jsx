@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Loading from 'react-loading-animation';
+import toastr from 'toastr';
+import swal from 'sweetalert'
 import SearchBar from './SearchBar';
 import Categories from './Categories';
 import CategoryModal from './CategoryModal';
 import CheatModal from './CheatModal';
 import validateCategory, {editCategoryValidator, addCheatValidator} from '../helpers/inputValidator';
-import { getAllCheats,addCategory, deleteCategory, editCategory, addCheat } from '../actions/cheatsAction';
+import { getAllCheats, addCategory, deleteCategory, deleteCheat, editCategory, addCheat } from '../actions/cheatsAction';
 import { logOut }  from '../actions/userAction'
 
 export class LandingPage extends Component {
@@ -25,7 +27,8 @@ export class LandingPage extends Component {
       errors: {},
       modalLoading: false,
       pageLoading: false,
-      cheatLoading: false
+      cheatLoading: false,
+      copied: false
     };
 
     this.handleHide = this.handleHide.bind(this);
@@ -42,6 +45,9 @@ export class LandingPage extends Component {
     this.cheatModalOnHide = this.cheatModalOnHide.bind(this)
     this.addCheat = this.addCheat.bind(this)
     this.handleLogOut = this.handleLogOut.bind(this)
+    this.onCopy = this.onCopy.bind(this)
+    this.deleteCheat = this.deleteCheat.bind(this)
+    
   }
 
 
@@ -67,7 +73,11 @@ export class LandingPage extends Component {
     e.preventDefault();
     if (this.addCategoryformIsValid()) {
       this.setState({ errors: {}, modalLoading: true });
-      this.props.addCategory(this.state.categoryTitle).then(() => {
+      const categoryDetails = {
+        category: this.state.categoryTitle,
+        userId: this.props.userData.user.id
+      }
+      this.props.addCategory(categoryDetails).then(() => {
         this.setState({
           categoryTitle: '',
           show: false,
@@ -83,7 +93,8 @@ export class LandingPage extends Component {
       const cheatDetails = {
         command: this.state.command,
         description: this.state.description,
-        keywords: this.state.keywords
+        keywords: this.state.keywords,
+        userId: this.props.userData.user.id
       }
       this.props.addCheat(id, cheatDetails).then(() => {
         this.setState({
@@ -113,7 +124,51 @@ export class LandingPage extends Component {
   }
   
   deleteCategory(id) {
-    this.props.deleteCategory(id)
+    swal({
+      title: 'Delete Category',
+      text: 'Are you sure you want to delete this category',
+      icon: 'info',
+      showCancelButton: true,
+      buttons: true,
+      dangerMode: true,
+      closeOnConfirm: false,
+      closeOnCancel: true,
+      closeOnClickOutside: true
+    })
+    .then((result) => {
+      if(result) {
+        this.props.deleteCategory(id)
+      } else {
+        swal("Category not deleted.", {
+          buttons: false,
+          timer: 1000,
+        });
+      }
+    })
+  }
+
+  deleteCheat(cheatId, categoryId){
+    swal({
+      title: 'Delete Cheat',
+      text: 'Are you sure you want to delete this cheat',
+      icon: 'info',
+      showCancelButton: true,
+      buttons: true,
+      dangerMode: true,
+      closeOnConfirm: false,
+      closeOnCancel: true,
+      closeOnClickOutside: true
+    })
+    .then((result) => {
+      if(result) {
+        this.props.deleteCheat(cheatId, categoryId)
+      } else {
+        swal("Cheat not deleted.", {
+          buttons: false,
+          timer: 1000,
+        });
+      }
+    })
   }
 
   handleHide() {
@@ -164,6 +219,15 @@ export class LandingPage extends Component {
       [e.target.name]: e.target.value
     });
   }
+
+  onCopy(command) {
+    toastr.clear()
+    navigator.clipboard.writeText(`$ ${command}`)
+    this.setState({copied: true})
+    toastr.success(`'$ ${command}' command successfully copied.`)
+    this.setState({copied: false})
+  }
+
 
   editformIsValid() {
     const { errors, isValid } = editCategoryValidator(this.state);
@@ -218,10 +282,13 @@ export class LandingPage extends Component {
           <Loading /> : 
           <div className="container">
               <Categories 
+                onCopy={this.onCopy}
                 search={this.state.search}
                 deleteCategory={this.deleteCategory}
                 onShow={this.modalShow}
                 cheatModalShow={this.cheatModalShow}
+                deleteCheat={this.deleteCheat}
+                userId={this.props.userData.user.id}
               />
           </div>
         }
@@ -251,7 +318,7 @@ export class LandingPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.user
+  userData: state.user
 });
 
 const mapDispatchToProps = dispatch =>
@@ -260,6 +327,7 @@ const mapDispatchToProps = dispatch =>
       getAllCheats,
       addCategory,
       deleteCategory,
+      deleteCheat,
       editCategory,
       addCheat, 
       logOut

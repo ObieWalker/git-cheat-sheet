@@ -1,0 +1,1275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Component renders component successfully 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Login
+    authenticateUser={[MockFunction]}
+    user={
+      Object {
+        "isAuthenticated": false,
+        "user": Object {},
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3
+          style={
+            Object {
+              "fontFamily": "serif",
+              "marginTop": "5%",
+            }
+          }
+        >
+          Sign in to your account.
+           
+        </h3>,
+        <br />,
+        " ",
+        <br />,
+        <div
+          style={Object {}}
+        >
+          <form
+            className="col s12 m6 push-m3 l4 push-l4"
+          >
+            <div
+              className="row"
+            >
+              <label
+                htmlFor="email"
+              >
+                Email
+              </label>
+              <div
+                className="input-field col s12 m6 push-m3 l4 push-l4"
+              >
+                <input
+                  className="validate"
+                  id="email"
+                  name="email"
+                  onChange={[Function]}
+                  type="email"
+                />
+              </div>
+            </div>
+            <br />
+            <div
+              className="row"
+            >
+              <label
+                htmlFor="password"
+              >
+                Password
+              </label>
+              <div
+                className="input-field col s12 m6 push-m3 l4 push-l4"
+              >
+                <input
+                  className="validate"
+                  id="password"
+                  name="password"
+                  onChange={[Function]}
+                  type="password"
+                />
+              </div>
+            </div>
+            <br />
+            <div
+              className="row"
+            >
+              <div
+                className="col s12 m6 push-m3 l4 push-l4"
+              >
+                <p>
+                  Do not have an account? You can register 
+                  <Link
+                    replace={false}
+                    to="/register"
+                  >
+                    here
+                  </Link>
+                </p>
+              </div>
+            </div>
+            <br />
+            <div
+              className="row col s12 m6 push-m3 l2 push-l4"
+            >
+              <button
+                className="col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo"
+                id="submit"
+                name="btn_login"
+                onClick={[Function]}
+                type="submit"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>,
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Sign in to your account.",
+            " ",
+          ],
+          "style": Object {
+            "fontFamily": "serif",
+            "marginTop": "5%",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          "Sign in to your account.",
+          " ",
+        ],
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      " ",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            className="col s12 m6 push-m3 l4 push-l4"
+          >
+            <div
+              className="row"
+            >
+              <label
+                htmlFor="email"
+              >
+                Email
+              </label>
+              <div
+                className="input-field col s12 m6 push-m3 l4 push-l4"
+              >
+                <input
+                  className="validate"
+                  id="email"
+                  name="email"
+                  onChange={[Function]}
+                  type="email"
+                />
+              </div>
+            </div>
+            <br />
+            <div
+              className="row"
+            >
+              <label
+                htmlFor="password"
+              >
+                Password
+              </label>
+              <div
+                className="input-field col s12 m6 push-m3 l4 push-l4"
+              >
+                <input
+                  className="validate"
+                  id="password"
+                  name="password"
+                  onChange={[Function]}
+                  type="password"
+                />
+              </div>
+            </div>
+            <br />
+            <div
+              className="row"
+            >
+              <div
+                className="col s12 m6 push-m3 l4 push-l4"
+              >
+                <p>
+                  Do not have an account? You can register 
+                  <Link
+                    replace={false}
+                    to="/register"
+                  >
+                    here
+                  </Link>
+                </p>
+              </div>
+            </div>
+            <br />
+            <div
+              className="row col s12 m6 push-m3 l2 push-l4"
+            >
+              <button
+                className="col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo"
+                id="submit"
+                name="btn_login"
+                onClick={[Function]}
+                type="submit"
+              >
+                Login
+              </button>
+            </div>
+          </form>,
+          "style": Object {},
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <div
+                  className="input-field col s12 m6 push-m3 l4 push-l4"
+                >
+                  <input
+                    className="validate"
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    type="email"
+                  />
+                </div>
+              </div>,
+              <br />,
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="password"
+                >
+                  Password
+                </label>
+                <div
+                  className="input-field col s12 m6 push-m3 l4 push-l4"
+                >
+                  <input
+                    className="validate"
+                    id="password"
+                    name="password"
+                    onChange={[Function]}
+                    type="password"
+                  />
+                </div>
+              </div>,
+              <br />,
+              <div
+                className="row"
+              >
+                <div
+                  className="col s12 m6 push-m3 l4 push-l4"
+                >
+                  <p>
+                    Do not have an account? You can register 
+                    <Link
+                      replace={false}
+                      to="/register"
+                    >
+                      here
+                    </Link>
+                  </p>
+                </div>
+              </div>,
+              <br />,
+              <div
+                className="row col s12 m6 push-m3 l2 push-l4"
+              >
+                <button
+                  className="col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo"
+                  id="submit"
+                  name="btn_login"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Login
+                </button>
+              </div>,
+            ],
+            "className": "col s12 m6 push-m3 l4 push-l4",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>,
+                  <div
+                    className="input-field col s12 m6 push-m3 l4 push-l4"
+                  >
+                    <input
+                      className="validate"
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      type="email"
+                    />
+                  </div>,
+                  undefined,
+                ],
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Email",
+                    "htmlFor": "email",
+                  },
+                  "ref": null,
+                  "rendered": "Email",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <input
+                      className="validate"
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      type="email"
+                    />,
+                    "className": "input-field col s12 m6 push-m3 l4 push-l4",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "validate",
+                      "error": undefined,
+                      "id": "email",
+                      "name": "email",
+                      "onChange": [Function],
+                      "onFocus": undefined,
+                      "type": "email",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  "type": "div",
+                },
+                undefined,
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    htmlFor="password"
+                  >
+                    Password
+                  </label>,
+                  <div
+                    className="input-field col s12 m6 push-m3 l4 push-l4"
+                  >
+                    <input
+                      className="validate"
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      type="password"
+                    />
+                  </div>,
+                  undefined,
+                ],
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Password",
+                    "htmlFor": "password",
+                  },
+                  "ref": null,
+                  "rendered": "Password",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <input
+                      className="validate"
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      type="password"
+                    />,
+                    "className": "input-field col s12 m6 push-m3 l4 push-l4",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "validate",
+                      "id": "password",
+                      "name": "password",
+                      "onChange": [Function],
+                      "onFocus": undefined,
+                      "type": "password",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  "type": "div",
+                },
+                undefined,
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="col s12 m6 push-m3 l4 push-l4"
+                >
+                  <p>
+                    Do not have an account? You can register 
+                    <Link
+                      replace={false}
+                      to="/register"
+                    >
+                      here
+                    </Link>
+                  </p>
+                </div>,
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <p>
+                    Do not have an account? You can register 
+                    <Link
+                      replace={false}
+                      to="/register"
+                    >
+                      here
+                    </Link>
+                  </p>,
+                  "className": "col s12 m6 push-m3 l4 push-l4",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Do not have an account? You can register ",
+                      <Link
+                        replace={false}
+                        to="/register"
+                      >
+                        here
+                      </Link>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Do not have an account? You can register ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "here",
+                        "replace": false,
+                        "to": "/register",
+                      },
+                      "ref": null,
+                      "rendered": "here",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "p",
+                },
+                "type": "div",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo"
+                  id="submit"
+                  name="btn_login"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Login
+                </button>,
+                "className": "row col s12 m6 push-m3 l2 push-l4",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Login",
+                  "className": "col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo",
+                  "id": "submit",
+                  "name": "btn_login",
+                  "onClick": [Function],
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": "Login",
+                "type": "button",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3
+            style={
+              Object {
+                "fontFamily": "serif",
+                "marginTop": "5%",
+              }
+            }
+          >
+            Sign in to your account.
+             
+          </h3>,
+          <br />,
+          " ",
+          <br />,
+          <div
+            style={Object {}}
+          >
+            <form
+              className="col s12 m6 push-m3 l4 push-l4"
+            >
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <div
+                  className="input-field col s12 m6 push-m3 l4 push-l4"
+                >
+                  <input
+                    className="validate"
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    type="email"
+                  />
+                </div>
+              </div>
+              <br />
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="password"
+                >
+                  Password
+                </label>
+                <div
+                  className="input-field col s12 m6 push-m3 l4 push-l4"
+                >
+                  <input
+                    className="validate"
+                    id="password"
+                    name="password"
+                    onChange={[Function]}
+                    type="password"
+                  />
+                </div>
+              </div>
+              <br />
+              <div
+                className="row"
+              >
+                <div
+                  className="col s12 m6 push-m3 l4 push-l4"
+                >
+                  <p>
+                    Do not have an account? You can register 
+                    <Link
+                      replace={false}
+                      to="/register"
+                    >
+                      here
+                    </Link>
+                  </p>
+                </div>
+              </div>
+              <br />
+              <div
+                className="row col s12 m6 push-m3 l2 push-l4"
+              >
+                <button
+                  className="col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo"
+                  id="submit"
+                  name="btn_login"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Sign in to your account.",
+              " ",
+            ],
+            "style": Object {
+              "fontFamily": "serif",
+              "marginTop": "5%",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            "Sign in to your account.",
+            " ",
+          ],
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        " ",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              className="col s12 m6 push-m3 l4 push-l4"
+            >
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <div
+                  className="input-field col s12 m6 push-m3 l4 push-l4"
+                >
+                  <input
+                    className="validate"
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    type="email"
+                  />
+                </div>
+              </div>
+              <br />
+              <div
+                className="row"
+              >
+                <label
+                  htmlFor="password"
+                >
+                  Password
+                </label>
+                <div
+                  className="input-field col s12 m6 push-m3 l4 push-l4"
+                >
+                  <input
+                    className="validate"
+                    id="password"
+                    name="password"
+                    onChange={[Function]}
+                    type="password"
+                  />
+                </div>
+              </div>
+              <br />
+              <div
+                className="row"
+              >
+                <div
+                  className="col s12 m6 push-m3 l4 push-l4"
+                >
+                  <p>
+                    Do not have an account? You can register 
+                    <Link
+                      replace={false}
+                      to="/register"
+                    >
+                      here
+                    </Link>
+                  </p>
+                </div>
+              </div>
+              <br />
+              <div
+                className="row col s12 m6 push-m3 l2 push-l4"
+              >
+                <button
+                  className="col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo"
+                  id="submit"
+                  name="btn_login"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Login
+                </button>
+              </div>
+            </form>,
+            "style": Object {},
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="row"
+                >
+                  <label
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <div
+                    className="input-field col s12 m6 push-m3 l4 push-l4"
+                  >
+                    <input
+                      className="validate"
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      type="email"
+                    />
+                  </div>
+                </div>,
+                <br />,
+                <div
+                  className="row"
+                >
+                  <label
+                    htmlFor="password"
+                  >
+                    Password
+                  </label>
+                  <div
+                    className="input-field col s12 m6 push-m3 l4 push-l4"
+                  >
+                    <input
+                      className="validate"
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      type="password"
+                    />
+                  </div>
+                </div>,
+                <br />,
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col s12 m6 push-m3 l4 push-l4"
+                  >
+                    <p>
+                      Do not have an account? You can register 
+                      <Link
+                        replace={false}
+                        to="/register"
+                      >
+                        here
+                      </Link>
+                    </p>
+                  </div>
+                </div>,
+                <br />,
+                <div
+                  className="row col s12 m6 push-m3 l2 push-l4"
+                >
+                  <button
+                    className="col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo"
+                    id="submit"
+                    name="btn_login"
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                </div>,
+              ],
+              "className": "col s12 m6 push-m3 l4 push-l4",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      htmlFor="email"
+                    >
+                      Email
+                    </label>,
+                    <div
+                      className="input-field col s12 m6 push-m3 l4 push-l4"
+                    >
+                      <input
+                        className="validate"
+                        id="email"
+                        name="email"
+                        onChange={[Function]}
+                        type="email"
+                      />
+                    </div>,
+                    undefined,
+                  ],
+                  "className": "row",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Email",
+                      "htmlFor": "email",
+                    },
+                    "ref": null,
+                    "rendered": "Email",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <input
+                        className="validate"
+                        id="email"
+                        name="email"
+                        onChange={[Function]}
+                        type="email"
+                      />,
+                      "className": "input-field col s12 m6 push-m3 l4 push-l4",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "validate",
+                        "error": undefined,
+                        "id": "email",
+                        "name": "email",
+                        "onChange": [Function],
+                        "onFocus": undefined,
+                        "type": "email",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "input",
+                    },
+                    "type": "div",
+                  },
+                  undefined,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      htmlFor="password"
+                    >
+                      Password
+                    </label>,
+                    <div
+                      className="input-field col s12 m6 push-m3 l4 push-l4"
+                    >
+                      <input
+                        className="validate"
+                        id="password"
+                        name="password"
+                        onChange={[Function]}
+                        type="password"
+                      />
+                    </div>,
+                    undefined,
+                  ],
+                  "className": "row",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Password",
+                      "htmlFor": "password",
+                    },
+                    "ref": null,
+                    "rendered": "Password",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <input
+                        className="validate"
+                        id="password"
+                        name="password"
+                        onChange={[Function]}
+                        type="password"
+                      />,
+                      "className": "input-field col s12 m6 push-m3 l4 push-l4",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "validate",
+                        "id": "password",
+                        "name": "password",
+                        "onChange": [Function],
+                        "onFocus": undefined,
+                        "type": "password",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "input",
+                    },
+                    "type": "div",
+                  },
+                  undefined,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="col s12 m6 push-m3 l4 push-l4"
+                  >
+                    <p>
+                      Do not have an account? You can register 
+                      <Link
+                        replace={false}
+                        to="/register"
+                      >
+                        here
+                      </Link>
+                    </p>
+                  </div>,
+                  "className": "row",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <p>
+                      Do not have an account? You can register 
+                      <Link
+                        replace={false}
+                        to="/register"
+                      >
+                        here
+                      </Link>
+                    </p>,
+                    "className": "col s12 m6 push-m3 l4 push-l4",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Do not have an account? You can register ",
+                        <Link
+                          replace={false}
+                          to="/register"
+                        >
+                          here
+                        </Link>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Do not have an account? You can register ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "here",
+                          "replace": false,
+                          "to": "/register",
+                        },
+                        "ref": null,
+                        "rendered": "here",
+                        "type": [Function],
+                      },
+                    ],
+                    "type": "p",
+                  },
+                  "type": "div",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo"
+                    id="submit"
+                    name="btn_login"
+                    onClick={[Function]}
+                    type="submit"
+                  >
+                    Login
+                  </button>,
+                  "className": "row col s12 m6 push-m3 l2 push-l4",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Login",
+                    "className": "col s4 push-s4 m4 push-m4 l2 push-l5 btn btn-small waves-effect indigo",
+                    "id": "submit",
+                    "name": "btn_login",
+                    "onClick": [Function],
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Login",
+                  "type": "button",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
