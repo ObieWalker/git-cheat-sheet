@@ -9,7 +9,7 @@ const CategoryCard = ({cheats, search, deleteCategory, onShow, cheatModalShow, o
     return command.description.toLowerCase().indexOf(search.toLowerCase()) !== -1
   })
   return (
-      <div className="card card-cascade narrower bg-dark" style={{ width: '33%', borderRadius: '2%' }}>
+      <div className="card__ bg-dark" style={{ borderRadius: '10px' }}>
         <div className="card-body" style={{ padding: '5%' }}>
           <div>
             {cheats.userId &&

@@ -1,65 +1,55 @@
 
-
+.cards-container {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
 
 @media only screen and (max-width: 2000px) {
   .cards-container {
-    /* -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid; */
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: flex-start !important;
-
+    column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
   }
   
-  .cards-container .card {
-    /* display: flex !important;
-    flex-wrap: wrap !important;
-    flex-direction: column !important; */
-    /* overflow: visible !important; */
-    width: 30% !important;
-    margin: 1%  !important;
+  .cards-container .card__ {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 200px;
+    display: inline-block;
+    box-sizing: border-box;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .cards-container {
-    /* -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid; */
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: flex-start !important;
-
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
   }
   
-  .cards-container .card {
-    /* display: flex !important;
-    flex-wrap: wrap !important;
-    flex-direction: column !important; */
-    /* overflow: visible !important; */
-    width: 45% !important;
-    margin: 1%  !important;
+  .cards-container .card__ {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 200px;
+    display: inline-block;
+    box-sizing: border-box;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .cards-container {
-    /* -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid; */
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: flex-start !important;
+    column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
   }
   
-  .cards-container .card {
-    /* display: flex !important;
-    flex-wrap: wrap !important;
-    flex-direction: column !important; */
-    /* overflow: visible !important; */
-    width: 100% !important;
-    margin: 1%  !important;
+  .cards-container .card__ {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 200px;
+    display: inline-block;
+    box-sizing: border-box;
   }
 }
 
