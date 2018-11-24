@@ -21,11 +21,20 @@ if (env !== 'test') {
   require('./database/database.js')
 }
 
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'));
+// }
+
+
 app.get('/hi', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });
 
 app.use('/api/v1/', router);
+
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 app.listen(port, function(err) {
   console.log("app is running on port", port)
   if (err) {
