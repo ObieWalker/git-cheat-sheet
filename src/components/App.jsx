@@ -6,6 +6,7 @@ import LandingPage from './LandingPage';
 import Login from './Login';
 import Register from './Register';
 import RequireAuthentication from '../helpers/RequireAuthentication'
+import NotFound from './NotFound'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route path="/cheats" component={RequireAuthentication(LandingPage)} />
+            <Route path="/*" component={NotFound} />
           </div>
         </Switch>
       </Router>
