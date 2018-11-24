@@ -85,15 +85,12 @@ export class Register extends Component {
         password: this.state.password,
         verifyPassword: this.state.verifyPassword
       };
-      this.props.registerUserAction(userDetails).then(() => {
-        const { registerUserError } = this.props.registerUser;
-        if (registerUserError === '') {
+      this.props.registerUser(userDetails).then(() => {
           const userLogin = {
             email: userDetails.email,
             password: userDetails.password
           };
-          this.props.login(userLogin, this.props.history);
-        }
+          this.props.authenticateUser(userLogin, this.props.history);
       });
       this.setState({
         isLoading: false
