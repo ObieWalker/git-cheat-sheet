@@ -26,6 +26,14 @@ const formIsValid = (data) => {
     errors.password = 'Your password is required';
   }
 
+  if (!validator.isEmpty(data.verifyPassword)) {
+    if (data.verifyPassword !== data.password) {
+      errors.verifyPassword = 'Your passwords do not match.';
+    }
+  } else {
+    errors.verifyPassword = 'You must confirm your password.';
+  }
+
   return { errors, isValid: isEmpty(errors) };
 };
 export default formIsValid;
